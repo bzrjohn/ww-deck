@@ -4,6 +4,60 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wedded Wonderland — International SEO &amp; AEO Strategy | Covert Digital</title>
+<style id="pw-gate-styles">
+  #pw-gate {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 99999;
+    background: #33334C; display: flex; align-items: center; justify-content: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  #pw-gate .pw-box {
+    background: white; border-radius: 16px; padding: 48px 40px; text-align: center;
+    max-width: 420px; width: 90%; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  #pw-gate .pw-logo { font-size: 1.1rem; font-weight: 600; color: #3E936C; letter-spacing: 0.5px; margin-bottom: 8px; }
+  #pw-gate h2 { font-size: 1.5rem; color: #33334C; margin-bottom: 6px; font-weight: 700; }
+  #pw-gate .pw-sub { font-size: 0.85rem; color: #9E9E9E; margin-bottom: 28px; }
+  #pw-gate input {
+    width: 100%; padding: 14px 18px; border: 2px solid #e5e5e5; border-radius: 10px;
+    font-size: 1rem; font-family: 'Poppins', sans-serif; outline: none; transition: border-color 0.2s;
+  }
+  #pw-gate input:focus { border-color: #3E936C; }
+  #pw-gate input.pw-error { border-color: #e74c3c; animation: pw-shake 0.4s ease; }
+  #pw-gate button {
+    width: 100%; padding: 14px; margin-top: 16px; background: #3E936C; color: white;
+    border: none; border-radius: 10px; font-size: 1rem; font-weight: 600; cursor: pointer;
+    font-family: 'Poppins', sans-serif; transition: background 0.2s;
+  }
+  #pw-gate button:hover { background: #017F4E; }
+  @keyframes pw-shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-8px)} 75%{transform:translateX(8px)} }
+  .deck-hidden { display: none !important; }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (sessionStorage.getItem('pw-ok') === '1') { unlockDeck(); return; }
+    var gate = document.getElementById('pw-gate');
+    var input = document.getElementById('pw-input');
+    var btn = document.getElementById('pw-btn');
+    function tryPw() {
+      if (input.value.toLowerCase().trim() === 'wedding') {
+        sessionStorage.setItem('pw-ok', '1');
+        unlockDeck();
+      } else {
+        input.classList.add('pw-error');
+        setTimeout(function() { input.classList.remove('pw-error'); }, 500);
+      }
+    }
+    btn.addEventListener('click', tryPw);
+    input.addEventListener('keydown', function(e) { if (e.key === 'Enter') tryPw(); });
+  });
+  function unlockDeck() {
+    var gate = document.getElementById('pw-gate');
+    var styles = document.getElementById('pw-gate-styles');
+    if (gate) gate.remove();
+    if (styles) styles.remove();
+    document.getElementById('deck-content').classList.remove('deck-hidden');
+  }
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <style>
 @font-face { font-family: 'Apercu'; src: url('https://www.covert.com.au/wp-content/themes/lf-covert/assets/fonts/Apercu-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; }
@@ -560,6 +614,16 @@ table.green-header th { background: var(--green); }
 </style>
 </head>
 <body>
+<div id="pw-gate">
+  <div class="pw-box">
+    <div class="pw-logo">Covert Digital</div>
+    <h2>Wedded Wonderland</h2>
+    <p class="pw-sub">This strategy deck is password protected.</p>
+    <input type="password" id="pw-input" placeholder="Enter password" autocomplete="off">
+    <button id="pw-btn">View Strategy</button>
+  </div>
+</div>
+<div id="deck-content" class="deck-hidden">
 
 <!-- ============ SLIDE 1: COVER ============ -->
 <div class="cover">
@@ -2897,5 +2961,6 @@ table.green-header th { background: var(--green); }
   </div>
 </div>
 
+</div><!-- /deck-content -->
 </body>
 </html>
