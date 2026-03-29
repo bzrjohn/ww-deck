@@ -598,6 +598,19 @@ table.green-header th { background: var(--green); }
   .closing h2 { font-size: 1.3rem; }
 }
 
+/* INLINE SVG ICONS — replaces emoji throughout the deck */
+.icon { display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; flex-shrink: 0; }
+.icon svg { display: block; }
+.icon-sm svg { width: 24px; height: 24px; }
+.icon-md svg { width: 32px; height: 32px; }
+.icon-lg svg { width: 48px; height: 48px; }
+.card-icon .icon svg, .fw-icon .icon svg, .moat-icon .icon svg, .weapon-icon .icon svg { width: 32px; height: 32px; }
+.pipe-icon .icon svg { width: 28px; height: 28px; }
+h3 .icon svg { width: 20px; height: 20px; }
+/* Flag replacement: small globe for country rows */
+.flag-icon { display: inline-flex; align-items: center; margin-right: 4px; vertical-align: middle; }
+.flag-icon svg { width: 16px; height: 16px; }
+
 @media print {
   .slide { min-height: auto; page-break-after: always; padding: 48px 40px; }
   .slide:last-child { page-break-after: avoid; }
@@ -655,17 +668,17 @@ table.green-header th { background: var(--green); }
     <p class="subtitle" style="margin-top:12px;">We build performance machines. Strategy, design, and digital marketing — powered by Icaros, our proprietary SEO platform — engineered to compound growth and capture market share at scale.</p>
     <div class="card-grid">
       <div class="card">
-        <div class="card-icon">&#9881;</div>
+        <div class="card-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M8 6h8M9 6v4a3 3 0 0 0 6 0V6"/><path d="M7.5 14h9l1 8H6.5l1-8z"/><path d="M9 10c-2 1-3 3-1.5 4h9c1.5-1 .5-3-1.5-4"/></svg></span></div>
         <h3>Strategy</h3>
         <p>Programmatic SEO, Answer Engine Optimization, international market entry, and competitive displacement strategies built on data, not guesswork.</p>
       </div>
       <div class="card">
-        <div class="card-icon">&#9733;</div>
+        <div class="card-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span></div>
         <h3>Design</h3>
         <p>Conversion-engineered websites, landing pages, and brand systems that turn traffic into revenue. Every pixel earns its keep.</p>
       </div>
       <div class="card">
-        <div class="card-icon">&#9889;</div>
+        <div class="card-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span></div>
         <h3>Marketing</h3>
         <p>Multi-channel growth engines spanning Google, AI search, TikTok, Pinterest, YouTube, and proprietary authority networks. One machine, seven channels.</p>
       </div>
@@ -835,37 +848,37 @@ table.green-header th { background: var(--green); }
     <p class="subtitle" style="margin-top:12px;">This is not seven separate strategies stapled together. This is one interconnected machine where every channel amplifies every other channel, creating a compounding growth loop.</p>
     <div class="flywheel-grid" style="margin-top:40px;">
       <div class="fw-node">
-        <span class="fw-icon">&#127909;</span>
+        <span class="fw-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span></span>
         TikTok Engine
         <span class="fw-metric">28 videos/mo &rarr; 700K views</span>
       </div>
       <div class="fw-node">
-        <span class="fw-icon">&#128270;</span>
+        <span class="fw-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><path d="M2 10h16M10 2a12 12 0 0 1 4 8 12 12 0 0 1-4 8 12 12 0 0 1-4-8 12 12 0 0 1 4-8z"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span></span>
         Google SEO
         <span class="fw-metric">3,000+ pages &rarr; 100K+ visits/mo</span>
       </div>
       <div class="fw-node">
-        <span class="fw-icon">&#127916;</span>
+        <span class="fw-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg></span></span>
         YouTube
         <span class="fw-metric">50 videos/mo &rarr; +47% dwell time</span>
       </div>
       <div class="fw-node">
-        <span class="fw-icon">&#129302;</span>
+        <span class="fw-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"/><path d="M9 21h6M10 17v4M14 17v4"/><path d="M8 9h2l1 2 2-4 1 2h2"/></svg></span></span>
         AEO Engine
         <span class="fw-metric">200 AI citations/mo</span>
       </div>
       <div class="fw-node">
-        <span class="fw-icon">&#128204;</span>
+        <span class="fw-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span></span>
         Pinterest
         <span class="fw-metric">280 pins/mo &rarr; 10M impressions</span>
       </div>
       <div class="fw-node">
-        <span class="fw-icon">&#128279;</span>
+        <span class="fw-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span></span>
         Authority Engine
         <span class="fw-metric">530-670 new domains/mo</span>
       </div>
       <div class="fw-core">
-        &#128260; THE COMPOUND EFFECT &mdash; More traffic &rarr; more vendors &rarr; more content &rarr; more traffic. The cycle compounds monthly. Every engine feeds every other engine.
+        <span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span> THE COMPOUND EFFECT &mdash; More traffic &rarr; more vendors &rarr; more content &rarr; more traffic. The cycle compounds monthly. Every engine feeds every other engine.
       </div>
     </div>
   </div>
@@ -1513,32 +1526,32 @@ table.green-header th { background: var(--green); }
     </div>
     <div class="card-grid" style="margin-top:28px;">
       <div class="card" style="text-align:center;">
-        <div style="font-size:1.5rem; margin-bottom:8px;">&#127470;&#127475;</div>
+        <div style="font-size:1.5rem; margin-bottom:8px;"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span></div>
         <h3 style="font-size:0.85rem;">Indian Weddings</h3>
         <p style="font-size:0.75rem;">Tuscany, Santorini, Lake Como, Bali, Thailand, Dubai, France, Spain — 50+ pages</p>
       </div>
       <div class="card" style="text-align:center;">
-        <div style="font-size:1.5rem; margin-bottom:8px;">&#127473;&#127463;</div>
+        <div style="font-size:1.5rem; margin-bottom:8px;"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span></div>
         <h3 style="font-size:0.85rem;">Lebanese Weddings</h3>
         <p style="font-size:0.75rem;">Greece, France, Italy, Spain, Cyprus, UK — 40+ pages</p>
       </div>
       <div class="card" style="text-align:center;">
-        <div style="font-size:1.5rem; margin-bottom:8px;">&#127475;&#127468;</div>
+        <div style="font-size:1.5rem; margin-bottom:8px;"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span></div>
         <h3 style="font-size:0.85rem;">Nigerian Weddings</h3>
         <p style="font-size:0.75rem;">UK, France, Dubai, Jamaica, Ghana — 30+ pages</p>
       </div>
       <div class="card" style="text-align:center;">
-        <div style="font-size:1.5rem; margin-bottom:8px;">&#127464;&#127475;</div>
+        <div style="font-size:1.5rem; margin-bottom:8px;"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span></div>
         <h3 style="font-size:0.85rem;">Chinese Weddings</h3>
         <p style="font-size:0.75rem;">Bali, Australia, Japan, NZ, Europe — 40+ pages</p>
       </div>
       <div class="card" style="text-align:center;">
-        <div style="font-size:1.5rem; margin-bottom:8px;">&#127470;&#127479;</div>
+        <div style="font-size:1.5rem; margin-bottom:8px;"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span></div>
         <h3 style="font-size:0.85rem;">Persian Weddings</h3>
         <p style="font-size:0.75rem;">Turkey, Italy, France, Spain, Greece — 30+ pages</p>
       </div>
       <div class="card" style="text-align:center;">
-        <div style="font-size:1.5rem; margin-bottom:8px;">&#127468;&#127479;</div>
+        <div style="font-size:1.5rem; margin-bottom:8px;"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span></div>
         <h3 style="font-size:0.85rem;">Greek Weddings</h3>
         <p style="font-size:0.75rem;">Santorini, Mykonos, Athens, Crete, plus abroad — 30+ pages</p>
       </div>
@@ -1594,22 +1607,22 @@ table.green-header th { background: var(--green); }
     <p class="subtitle" style="margin-top:12px;">Every page is connected through a calculated internal linking architecture managed by Icaros. Template-level link rules ensure 15-25 contextual links + 10-15 navigational links per page. PageRank flows intentionally from authority to conversion.</p>
     <div class="pipeline" style="margin-top:32px;">
       <div class="pipeline-step">
-        <div class="pipe-icon">&#127968;</div>
+        <div class="pipe-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span></div>
         <h3>Pillar Pages</h3>
         <p>T1 Country Hubs<br>50 pages, highest authority<br>15-25 outbound links each</p>
       </div>
       <div class="pipeline-step">
-        <div class="pipe-icon">&#127961;</div>
+        <div class="pipe-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4"/><line x1="8" y1="6" x2="8" y2="6.01"/><line x1="12" y1="6" x2="12" y2="6.01"/><line x1="16" y1="6" x2="16" y2="6.01"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/></svg></span></div>
         <h3>Hub Pages</h3>
         <p>T2 Region + T4 Cultural Hubs<br>215 pages, cluster centers<br>Cross-linked to siblings</p>
       </div>
       <div class="pipeline-step">
-        <div class="pipe-icon">&#128209;</div>
+        <div class="pipe-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span></div>
         <h3>Spoke Pages</h3>
         <p>T3, T5, T6, T7<br>2,490 pages, topic depth<br>Link up to hubs + across</p>
       </div>
       <div class="pipeline-step">
-        <div class="pipe-icon">&#127793;</div>
+        <div class="pipe-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span></div>
         <h3>Leaf Pages</h3>
         <p>T8, T9, T10<br>3,100+ pages, volume<br>10+ inbound each</p>
       </div>
@@ -1770,27 +1783,27 @@ table.green-header th { background: var(--green); }
     <p class="subtitle" style="margin-top:12px;">Five reasons wedding planning is the ideal use case for AI-assisted search — and why the brand that owns this space wins everything.</p>
     <div class="card-grid" style="margin-top:32px; grid-template-columns: repeat(5, 1fr);">
       <div class="card" style="text-align:center;">
-        <div class="card-icon">&#129300;</div>
+        <div class="card-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"/><path d="M9 21h6M10 17v4M14 17v4"/><path d="M8 9h2l1 2 2-4 1 2h2"/></svg></span></div>
         <h3 style="font-size:0.85rem;">Complex Multi-Variable Queries</h3>
         <p style="font-size:0.75rem;"><em>"British-Indian couple, 180 guests, Hindu ceremony, €90K budget, Europe"</em> — too complex for Google's 10 blue links. Perfect for AI's synthesized responses.</p>
       </div>
       <div class="card" style="text-align:center;">
-        <div class="card-icon">&#128197;</div>
+        <div class="card-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span></div>
         <h3 style="font-size:0.85rem;">12-18 Month Research Cycles</h3>
         <p style="font-size:0.75rem;">Hundreds of queries per couple over 12-18 months. AI becomes their planning assistant — and remembers what it cited last time.</p>
       </div>
       <div class="card" style="text-align:center;">
-        <div class="card-icon">&#127759;</div>
+        <div class="card-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span></div>
         <h3 style="font-size:0.85rem;">Hyper-Specific Local Knowledge</h3>
         <p style="font-size:0.75rem;"><em>"Which Tuscan villas accommodate 200-guest mandap setups?"</em> — AI excels at matching structured venue data to specific cultural requirements.</p>
       </div>
       <div class="card" style="text-align:center;">
-        <div class="card-icon">&#127887;</div>
+        <div class="card-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span></div>
         <h3 style="font-size:0.85rem;">Cultural Complexity</h3>
         <p style="font-size:0.75rem;"><em>"Can I have a Hindu ceremony in Italy? How many priests are available in Tuscany?"</em> — multi-layered questions requiring expert knowledge. AI cites the source with the answer.</p>
       </div>
       <div class="card" style="text-align:center;">
-        <div class="card-icon">&#128176;</div>
+        <div class="card-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span></div>
         <h3 style="font-size:0.85rem;">Cost Questions Demand Data</h3>
         <p style="font-size:0.75rem;"><em>"How much does a florist cost in Santorini?"</em> — AI needs specific, structured pricing data. The site with tables and numbers gets cited; the one with "it depends" doesn't.</p>
       </div>
@@ -1853,32 +1866,32 @@ table.green-header th { background: var(--green); }
     <p class="subtitle" style="margin-top:12px;">AI engines don't randomly pick sources. They follow a citation selection framework. We engineer every page to match it.</p>
     <div class="card-grid" style="margin-top:28px;">
       <div class="card">
-        <div class="card-icon">&#128203;</div>
+        <div class="card-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11.5 14.5 16 9"/></svg></span></div>
         <h3>Structured FAQ Schema</h3>
         <p>Every page has 10-15+ structured FAQ with JSON-LD FAQPage schema. AI engines parse structured Q&amp;A first when answering queries. Target: 7,500+ FAQ pairs across all pages.</p>
       </div>
       <div class="card">
-        <div class="card-icon">&#128202;</div>
+        <div class="card-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></span></div>
         <h3>Specific Data Tables</h3>
         <p>Cost breakdowns, venue comparisons, seasonal pricing — formatted in &lt;table&gt; with clear headers. AI engines extract tabular data preferentially over prose content.</p>
       </div>
       <div class="card">
-        <div class="card-icon">&#128100;</div>
+        <div class="card-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span></div>
         <h3>Recognized Author (E-E-A-T)</h3>
         <p>Wendy El-Khoury = 13 years of verifiable expertise, media appearances, target Knowledge Panel. Research shows 73% of Perplexity citations come from sites with DR 50+. Our authority engine gets WW there.</p>
       </div>
       <div class="card">
-        <div class="card-icon">&#128260;</div>
+        <div class="card-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span></div>
         <h3>Freshness Signals</h3>
         <p>"Last updated: March 2026" on every guide page. Quarterly refreshes of cost and legal data. AI engines have a documented preference for content updated within 90 days.</p>
       </div>
       <div class="card">
-        <div class="card-icon">&#127760;</div>
+        <div class="card-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span></div>
         <h3>Comprehensive Coverage</h3>
         <p>6,135+ pages = 10,400+ unique extractable data points. Citation surface area: 750 country FAQ + 7,500 cultural FAQ + 450 cost data points + 1,000 comparison rows + 400 legal requirements.</p>
       </div>
       <div class="card">
-        <div class="card-icon">&#127919;</div>
+        <div class="card-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span></div>
         <h3>Direct-Answer Format</h3>
         <p>Opening paragraphs written as direct answers: <em>"A destination wedding in Tuscany costs €25,000–€80,000. Mandap construction costs €3,000–€8,000."</em> — AI pulls specific figures verbatim.</p>
       </div>
@@ -2015,27 +2028,27 @@ table.green-header th { background: var(--green); }
     <h3 style="margin-top:32px; margin-bottom:16px;">6 Content Pillars</h3>
     <div class="pillar-grid">
       <div class="pillar-tag">
-        <h3>&#127909; Venue Reveals</h3>
+        <h3><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span> Venue Reveals</h3>
         <p>Drone shots, walk-throughs, before/after setups. Highest save rate.</p>
       </div>
       <div class="pillar-tag">
-        <h3>&#128176; Cost Breakdowns</h3>
+        <h3><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span> Cost Breakdowns</h3>
         <p>"How much our Tuscany wedding ACTUALLY cost." Data-driven, high engagement.</p>
       </div>
       <div class="pillar-tag">
-        <h3>&#127887; Cultural Ceremonies</h3>
+        <h3><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span> Cultural Ceremonies</h3>
         <p>Hindu mandap construction, Nigerian traditional rites, Lebanese dabke. Unique content.</p>
       </div>
       <div class="pillar-tag">
-        <h3>&#128161; Planning Tips</h3>
+        <h3><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span> Planning Tips</h3>
         <p>"5 things nobody tells you about getting married in Greece." SEO-optimized captions.</p>
       </div>
       <div class="pillar-tag">
-        <h3>&#127916; Behind the Scenes</h3>
+        <h3><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg></span> Behind the Scenes</h3>
         <p>Real wedding prep, vendor coordination, emotional moments. Builds trust.</p>
       </div>
       <div class="pillar-tag">
-        <h3>&#128150; Couple Stories</h3>
+        <h3><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span> Couple Stories</h3>
         <p>UGC from real WW couples. "Our destination wedding journey." Social proof at scale.</p>
       </div>
     </div>
@@ -2094,37 +2107,37 @@ table.green-header th { background: var(--green); }
     <p class="subtitle" style="margin-top:12px;">Every channel feeds every other channel. This is not five strategies — it is one machine with five outputs.</p>
     <div class="flywheel-grid" style="margin-top:36px;">
       <div class="fw-node">
-        <span class="fw-icon">&#127909;</span>
+        <span class="fw-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span></span>
         TikTok Creates Demand
         <span class="fw-metric">Viral video &rarr; search spike</span>
       </div>
       <div class="fw-node">
-        <span class="fw-icon">&#128270;</span>
+        <span class="fw-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><path d="M2 10h16M10 2a12 12 0 0 1 4 8 12 12 0 0 1-4 8 12 12 0 0 1-4-8 12 12 0 0 1 4-8z"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span></span>
         Google Captures It
         <span class="fw-metric">WW pages rank for the query</span>
       </div>
       <div class="fw-node">
-        <span class="fw-icon">&#127916;</span>
+        <span class="fw-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg></span></span>
         YouTube Extends Session
         <span class="fw-metric">Embedded video &rarr; +47% dwell</span>
       </div>
       <div class="fw-node">
-        <span class="fw-icon">&#129302;</span>
+        <span class="fw-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"/><path d="M9 21h6M10 17v4M14 17v4"/><path d="M8 9h2l1 2 2-4 1 2h2"/></svg></span></span>
         AI Engines Cite the Source
         <span class="fw-metric">"According to Wedded Wonderland..."</span>
       </div>
       <div class="fw-node">
-        <span class="fw-icon">&#128204;</span>
+        <span class="fw-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span></span>
         Pinterest Amplifies Visuals
         <span class="fw-metric">Image Pack &rarr; more discovery</span>
       </div>
       <div class="fw-node">
-        <span class="fw-icon">&#128101;</span>
+        <span class="fw-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span></span>
         Branded Search Grows
         <span class="fw-metric">Google sees authority signal</span>
       </div>
       <div class="fw-core">
-        &#128260; COMPOUND EFFECT &mdash; 1 real wedding = 3 TikToks + 1 YouTube film + 10 Pinterest pins + 1 WW page + FAQ for AI. By Month 12: 2,500+ content pieces compounding across all channels.
+        <span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span> COMPOUND EFFECT &mdash; 1 real wedding = 3 TikToks + 1 YouTube film + 10 Pinterest pins + 1 WW page + FAQ for AI. By Month 12: 2,500+ content pieces compounding across all channels.
       </div>
     </div>
     <div class="stat-row" style="margin-top:24px;">
@@ -2207,22 +2220,22 @@ table.green-header th { background: var(--green); }
     <p class="subtitle" style="margin-top:12px;">Every vendor listing = backlink + content + social mention. At 1,500 vendors, that's 1,500 organic backlinks. The network effect makes the platform more valuable for everyone.</p>
     <div class="pipeline" style="margin-top:28px;">
       <div class="pipeline-step">
-        <div class="pipe-icon">&#127970;</div>
+        <div class="pipe-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4"/><line x1="8" y1="6" x2="8" y2="6.01"/><line x1="12" y1="6" x2="12" y2="6.01"/><line x1="16" y1="6" x2="16" y2="6.01"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/></svg></span></div>
         <h3>Vendor Joins WW</h3>
         <p>Profile created on WW platform with venue/service data</p>
       </div>
       <div class="pipeline-step">
-        <div class="pipe-icon">&#128279;</div>
+        <div class="pipe-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span></div>
         <h3>Badge + Backlink</h3>
         <p>"Featured on WW" badge on their site linking to their WW profile</p>
       </div>
       <div class="pipeline-step">
-        <div class="pipe-icon">&#128247;</div>
+        <div class="pipe-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span></div>
         <h3>Content Contribution</h3>
         <p>Real wedding photos, case studies, pricing data → free content for WW</p>
       </div>
       <div class="pipeline-step">
-        <div class="pipe-icon">&#128260;</div>
+        <div class="pipe-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span></div>
         <h3>Cross-Referencing</h3>
         <p>WW cites vendor data; vendor cites WW guides → bidirectional authority</p>
       </div>
@@ -2368,32 +2381,32 @@ table.green-header th { background: var(--green); }
     <h2>The First Six<span class="period">.</span></h2>
     <div class="weapon-grid" style="margin-top:28px;">
       <div class="weapon-card">
-        <div class="weapon-icon">&#128200;</div>
+        <div class="weapon-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span></div>
         <h3>Wedding Cost Index</h3>
         <p>The Big Mac Index for weddings. Proprietary cost data across 50+ destinations. Updated quarterly. Expected yield: 15-25 DR 50-90+ backlinks per report. White-label licensing drives 50-100 permanent attribution links.</p>
       </div>
       <div class="weapon-card">
-        <div class="weapon-icon">&#11088;</div>
+        <div class="weapon-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span></div>
         <h3>Destination Readiness Score</h3>
         <p>Michelin stars for wedding destinations. Multi-factor scoring: infrastructure, legal ease, vendor density, cultural suitability, value. Proprietary data asset no competitor has.</p>
       </div>
       <div class="weapon-card">
-        <div class="weapon-icon">&#127942;</div>
+        <div class="weapon-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span></div>
         <h3>Certified Partner Program</h3>
         <p>Vendor badge = backlink machine. "Certified by Wedded Wonderland" badge on vendor sites links to their WW profile. At 1,000+ vendors = 1,000+ natural backlinks.</p>
       </div>
       <div class="weapon-card">
-        <div class="weapon-icon">&#128218;</div>
+        <div class="weapon-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span></div>
         <h3>Cultural Wedding Wiki</h3>
         <p>Zero-competition authority content. Comprehensive guides to 15+ cultural wedding traditions. No authoritative digital source exists. WW fills the void and owns the category.</p>
       </div>
       <div class="weapon-card">
-        <div class="weapon-icon">&#129302;</div>
+        <div class="weapon-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"/><path d="M9 21h6M10 17v4M14 17v4"/><path d="M8 9h2l1 2 2-4 1 2h2"/></svg></span></div>
         <h3>AI Planning Tool</h3>
         <p>Interactive lead magnet + data flywheel. Couples input preferences, get instant destination recommendations. Every interaction = data point that improves the model + qualifies the lead.</p>
       </div>
       <div class="weapon-card">
-        <div class="weapon-icon">&#128248;</div>
+        <div class="weapon-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span></div>
         <h3>UGC Machine</h3>
         <p>Couple submissions = free content at scale. Real wedding photo/video submissions generate 30+ content assets each. 10 weddings/month = 300 assets/month. Zero content cost.</p>
       </div>
@@ -2408,32 +2421,32 @@ table.green-header th { background: var(--green); }
     <h2>The Second Six<span class="period">.</span></h2>
     <div class="weapon-grid" style="margin-top:28px;">
       <div class="weapon-card">
-        <div class="weapon-icon">&#127963;</div>
+        <div class="weapon-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4"/><line x1="8" y1="6" x2="8" y2="6.01"/><line x1="12" y1="6" x2="12" y2="6.01"/><line x1="16" y1="6" x2="16" y2="6.01"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/></svg></span></div>
         <h3>Embassy / Tourism Partnerships</h3>
         <p>.gov backlinks — the highest authority links possible. Tourism board partnerships for destination content + embassy collaborations for legal guides. Target: 2-4 new partners per quarter.</p>
       </div>
       <div class="weapon-card">
-        <div class="weapon-icon">&#127774;</div>
+        <div class="weapon-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span></div>
         <h3>Seasonal Content Arbitrage</h3>
         <p>Pre-publish content 6-8 weeks before seasonal demand spikes. "Summer wedding in Santorini" published in February. First to rank when demand hits. Repeat for every destination &times; season.</p>
       </div>
       <div class="weapon-card">
-        <div class="weapon-icon">&#128279;</div>
+        <div class="weapon-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span></div>
         <h3>Link Reclamation</h3>
         <p>Steal competitor backlinks. Identify broken links pointing to competitor content, build superior WW page, contact webmasters with replacement. 20-30 targets per week. Also acquire expired wedding/travel domains (DR 25+) for 301 redirects — gaining 1,000-3,000 referring domains per acquisition.</p>
       </div>
       <div class="weapon-card">
-        <div class="weapon-icon">&#128241;</div>
+        <div class="weapon-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span></div>
         <h3>Micro-Influencer Program</h3>
         <p>2,000 mentions per year. Network of wedding micro-influencers sharing WW content. Each mention = brand signal + potential backlink + social proof.</p>
       </div>
       <div class="weapon-card">
-        <div class="weapon-icon">&#127908;</div>
+        <div class="weapon-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span></div>
         <h3>Webinar Pipeline</h3>
         <p>12 events/year &rarr; 200+ content pieces. Each webinar generates a landing page, blog recap, TikTok clips, YouTube video, Pinterest graphics, email sequence, and lead list.</p>
       </div>
       <div class="weapon-card">
-        <div class="weapon-icon">&#128205;</div>
+        <div class="weapon-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span></div>
         <h3>Google Business Profile Network</h3>
         <p>50 city-level GBP listings. "Wedded Wonderland — Wedding Planning" in Sydney, London, NYC, Dubai, Mumbai, etc. Local search visibility + Maps presence in every target market.</p>
       </div>
@@ -2516,19 +2529,19 @@ table.green-header th { background: var(--green); }
       <div>
         <h3 style="margin-bottom:16px;">Localization Layers (Not Translation)</h3>
         <div class="card" style="margin-bottom:12px; padding:16px;">
-          <h3 style="font-size:0.82rem;">&#128176; Currency</h3>
+          <h3 style="font-size:0.82rem;"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span> Currency</h3>
           <p style="font-size:0.75rem;">UK = GBP, US = USD, AU = AUD, Italy = EUR. Every cost shown in local currency.</p>
         </div>
         <div class="card" style="margin-bottom:12px; padding:16px;">
-          <h3 style="font-size:0.82rem;">&#9878; Legal Specifics</h3>
+          <h3 style="font-size:0.82rem;"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span> Legal Specifics</h3>
           <p style="font-size:0.75rem;">UK version of "Getting Married in Greece" includes FCO guidance + UK document requirements.</p>
         </div>
         <div class="card" style="margin-bottom:12px; padding:16px;">
-          <h3 style="font-size:0.82rem;">&#127887; Cultural Framing</h3>
+          <h3 style="font-size:0.82rem;"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span> Cultural Framing</h3>
           <p style="font-size:0.75rem;">Indian version of Italy page leads with Hindu ceremony spaces. AU version leads with "only a 24-hour flight."</p>
         </div>
         <div class="card" style="padding:16px;">
-          <h3 style="font-size:0.82rem;">&#127970; Vendor Focus</h3>
+          <h3 style="font-size:0.82rem;"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4"/><line x1="8" y1="6" x2="8" y2="6.01"/><line x1="12" y1="6" x2="12" y2="6.01"/><line x1="16" y1="6" x2="16" y2="6.01"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/></svg></span> Vendor Focus</h3>
           <p style="font-size:0.75rem;">UK version shows UK-based planners specializing in Greece. Local version shows Greek vendors.</p>
         </div>
       </div>
@@ -2550,15 +2563,15 @@ table.green-header th { background: var(--green); }
         <table style="margin-top:12px;">
           <thead><tr><th>Market</th><th>Keyword Opp.</th></tr></thead>
           <tbody>
-            <tr><td>&#127462;&#127482; Australia</td><td>45,000+/mo</td></tr>
-            <tr><td>&#127482;&#127480; United States</td><td>180,000+/mo</td></tr>
-            <tr><td>&#127468;&#127463; United Kingdom</td><td>65,000+/mo</td></tr>
-            <tr><td>&#127470;&#127475; India</td><td>80,000+/mo</td></tr>
-            <tr><td>&#127480;&#127468; Singapore</td><td>12,000+/mo</td></tr>
-            <tr><td>&#127470;&#127481; Italy</td><td>55,000+/mo</td></tr>
-            <tr><td>&#127467;&#127479; France</td><td>40,000+/mo</td></tr>
-            <tr><td>&#127468;&#127479; Greece</td><td>25,000+/mo</td></tr>
-            <tr><td>&#127466;&#127480; Spain</td><td>35,000+/mo</td></tr>
+            <tr><td>AU Australia</td><td>45,000+/mo</td></tr>
+            <tr><td>US United States</td><td>180,000+/mo</td></tr>
+            <tr><td>GB United Kingdom</td><td>65,000+/mo</td></tr>
+            <tr><td>IN India</td><td>80,000+/mo</td></tr>
+            <tr><td>SG Singapore</td><td>12,000+/mo</td></tr>
+            <tr><td>IT Italy</td><td>55,000+/mo</td></tr>
+            <tr><td>FR France</td><td>40,000+/mo</td></tr>
+            <tr><td>GR Greece</td><td>25,000+/mo</td></tr>
+            <tr><td>ES Spain</td><td>35,000+/mo</td></tr>
           </tbody>
         </table>
       </div>
@@ -2569,16 +2582,16 @@ table.green-header th { background: var(--green); }
         <table style="margin-top:12px;">
           <thead><tr><th>Market</th><th>Launch</th></tr></thead>
           <tbody>
-            <tr><td>&#127470;&#127465; Bali / Indonesia</td><td>Month 7</td></tr>
-            <tr><td>&#127481;&#127469; Thailand</td><td>Month 7</td></tr>
-            <tr><td>&#127477;&#127481; Portugal</td><td>Month 8</td></tr>
-            <tr><td>&#127471;&#127477; Japan</td><td>Month 8</td></tr>
-            <tr><td>&#127474;&#127485; Mexico</td><td>Month 9</td></tr>
-            <tr><td>&#127757; Caribbean</td><td>Month 9</td></tr>
-            <tr><td>&#127473;&#127472; Sri Lanka</td><td>Month 10</td></tr>
-            <tr><td>&#127467;&#127471; Fiji</td><td>Month 10</td></tr>
-            <tr><td>&#127475;&#127487; New Zealand</td><td>Month 11</td></tr>
-            <tr><td>&#127469;&#127479; Croatia</td><td>Month 11</td></tr>
+            <tr><td>ID Bali / Indonesia</td><td>Month 7</td></tr>
+            <tr><td>TH Thailand</td><td>Month 7</td></tr>
+            <tr><td>PT Portugal</td><td>Month 8</td></tr>
+            <tr><td>JP Japan</td><td>Month 8</td></tr>
+            <tr><td>MX Mexico</td><td>Month 9</td></tr>
+            <tr><td>Caribbean</td><td>Month 9</td></tr>
+            <tr><td>LK Sri Lanka</td><td>Month 10</td></tr>
+            <tr><td>FJ Fiji</td><td>Month 10</td></tr>
+            <tr><td>NZ New Zealand</td><td>Month 11</td></tr>
+            <tr><td>HR Croatia</td><td>Month 11</td></tr>
           </tbody>
         </table>
       </div>
@@ -2589,10 +2602,10 @@ table.green-header th { background: var(--green); }
         <table style="margin-top:12px;">
           <thead><tr><th>Market</th><th>Notes</th></tr></thead>
           <tbody>
-            <tr><td>&#127474;&#127462; Morocco</td><td>English + French</td></tr>
-            <tr><td>&#127462;&#127466; UAE / Dubai</td><td>English</td></tr>
-            <tr><td>&#127487;&#127462; South Africa</td><td>English</td></tr>
-            <tr><td>&#127474;&#127483; Maldives</td><td>English</td></tr>
+            <tr><td>MA Morocco</td><td>English + French</td></tr>
+            <tr><td>AE UAE / Dubai</td><td>English</td></tr>
+            <tr><td>ZA South Africa</td><td>English</td></tr>
+            <tr><td>MV Maldives</td><td>English</td></tr>
           </tbody>
         </table>
         <div class="insight" style="margin-top:16px;">
@@ -2611,32 +2624,32 @@ table.green-header th { background: var(--green); }
     <p class="subtitle" style="margin-top:12px;">By Month 12, WW has built six interlocking competitive moats that make displacement nearly impossible.</p>
     <div class="moat-grid" style="margin-top:28px;">
       <div class="moat-item">
-        <div class="moat-icon">&#127984;</div>
+        <div class="moat-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span></div>
         <h3>Content Fortress</h3>
         <p>5,000+ pages of structured, data-rich content. A competitor starting from scratch needs 18+ months to approach this depth. By then, WW has 10,000+.</p>
       </div>
       <div class="moat-item">
-        <div class="moat-icon">&#129302;</div>
+        <div class="moat-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"/><path d="M9 21h6M10 17v4M14 17v4"/><path d="M8 9h2l1 2 2-4 1 2h2"/></svg></span></div>
         <h3>AI Citation Lock-In</h3>
         <p>Once AI engines learn to cite WW, new content from WW is more likely to be cited (established authority bias). The more WW appears in AI training data refreshes, the more it gets cited in future responses. Target: 40-50% citation share by M12, 65-75% by M24.</p>
       </div>
       <div class="moat-item">
-        <div class="moat-icon">&#128279;</div>
+        <div class="moat-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span></div>
         <h3>Vendor Network Effect</h3>
         <p>1,000+ vendors each providing a backlink + content + social mention. The network grows more valuable with each addition. Vendors don't leave when they see ROI.</p>
       </div>
       <div class="moat-item">
-        <div class="moat-icon">&#128272;</div>
+        <div class="moat-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span></div>
         <h3>Authority Infrastructure</h3>
         <p>3,500+ referring domains, DR 62+, 2,000-domain owned media network. Years to build. Impossible to replicate without the same proprietary infrastructure.</p>
       </div>
       <div class="moat-item">
-        <div class="moat-icon">&#128202;</div>
+        <div class="moat-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></span></div>
         <h3>Data Moat</h3>
         <p>Proprietary cost data across 50+ destinations. Wedding Cost Index, Destination Readiness Scores. Data nobody else has collected. The more we gather, the more authoritative it becomes.</p>
       </div>
       <div class="moat-item">
-        <div class="moat-icon">&#127887;</div>
+        <div class="moat-icon"><span style="color:var(--green);display:inline-flex;vertical-align:middle;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span></div>
         <h3>Multicultural Depth</h3>
         <p>13 years of multicultural wedding expertise embedded in Wendy's brand. 15+ cultures served with authentic depth. This can't be faked or fast-tracked. Google's E-E-A-T recognizes it.</p>
       </div>
