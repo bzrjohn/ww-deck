@@ -149,8 +149,8 @@ table.green-header th { background: var(--green); }
 .check-list li { padding: 8px 0 8px 32px; position: relative; font-size: 0.9rem; color: var(--grey); line-height: 1.6; }
 .check-list li::before { content: '\2713'; position: absolute; left: 0; color: var(--green); font-weight: 700; font-size: 1.05rem; }
 .cross-list { list-style: none; }
-.cross-list li { padding: 8px 0 8px 32px; position: relative; font-size: 0.9rem; color: #D94343; line-height: 1.6; }
-.cross-list li::before { content: '\2717'; position: absolute; left: 0; color: #D94343; font-weight: 700; font-size: 1.05rem; }
+.cross-list li { padding: 8px 0 8px 32px; position: relative; font-size: 0.9rem; color: var(--grey); line-height: 1.6; }
+.cross-list li::before { content: '\2794'; position: absolute; left: 0; color: var(--navy); font-weight: 700; font-size: 1.05rem; }
 
 /* TIMELINE */
 .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; }
@@ -191,7 +191,7 @@ table.green-header th { background: var(--green); }
 
 /* CHANGE INDICATORS */
 .change-up { color: var(--green); font-weight: 700; }
-.change-down { color: #D94343; font-weight: 700; }
+.change-down { color: #C07A2A; font-weight: 700; }
 .change-flat { color: var(--grey-light); font-weight: 600; }
 
 /* SMOOTH SLIDE SEPARATION */
@@ -833,7 +833,7 @@ table.green-header th { background: var(--green); }
 </section>
 
 <!-- ============================================================
-     SLIDE 6 — KEYWORD CONCERNS
+     SLIDE 6 — KEYWORD OPPORTUNITIES
      ============================================================ -->
 <section class="slide slide-alt" id="slide-6">
   <div class="slide-inner">
@@ -894,7 +894,7 @@ table.green-header th { background: var(--green); }
 </section>
 
 <!-- ============================================================
-     SLIDE 7 — KEYWORD GAPS
+     SLIDE 7 — KEYWORD OPPORTUNITIES
      ============================================================ -->
 <section class="slide" id="slide-7">
   <div class="slide-inner">
@@ -907,7 +907,7 @@ table.green-header th { background: var(--green); }
       <div class="card" style="border-left: 4px solid var(--navy);">
         <h3 style="color: var(--navy);">Opportunity Keywords</h3>
         <p style="margin-bottom: 12px;">High-volume queries where we're not yet visible &mdash; ready to be captured with targeted content:</p>
-        <ul class="cross-list" style="margin-top: 12px;">
+        <ul class="check-list" style="margin-top: 12px;">
           <li>"Signs of sleep apnea"</li>
           <li>"Why do I wake up tired every day"</li>
           <li>"Is sleep apnea dangerous"</li>
@@ -954,29 +954,29 @@ table.green-header th { background: var(--green); }
               <tr>
                 <th>Competitor</th>
                 <th>Strengths</th>
-                <th>Weakness</th>
+                <th>ALH Advantage</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><strong>ResMed</strong></td>
                 <td>Dominates search, excellent UX, patient stories, chatbot, clinical data citations, 5-min email response</td>
-                <td>Manufacturer, not patient care provider</td>
+                <td>ALH provides patient care &mdash; ResMed can't</td>
               </tr>
               <tr>
                 <td><strong>Mayo / Cleveland Clinic</strong></td>
                 <td>Dominate informational queries globally</td>
-                <td>Not Australian, not service providers</td>
+                <td>ALH is local, Australian, and a service provider</td>
               </tr>
               <tr>
                 <td><strong>Healthdirect.gov.au</strong></td>
                 <td>Government authority, high domain rating</td>
-                <td>Directory only, not a competitor</td>
+                <td>Directory only &mdash; ALH can partner, not compete</td>
               </tr>
               <tr>
                 <td><strong>Sleep Health Foundation</strong></td>
                 <td>Educational authority in Australia</td>
-                <td>Non-profit, not commercial</td>
+                <td>Non-profit &mdash; ALH can be the commercial answer</td>
               </tr>
             </tbody>
           </table>
@@ -1007,12 +1007,12 @@ table.green-header th { background: var(--green); }
 </section>
 
 <!-- ============================================================
-     SLIDE 9 — PATIENT JOURNEY GAP
+     SLIDE 9 — PATIENT JOURNEY OPPORTUNITY
      ============================================================ -->
 <section class="slide" id="slide-9">
   <div class="slide-inner">
-    <h4>The Gap</h4>
-    <h2>The Patient Journey Opportunity<span class="period">.</span></h2>
+    <h4>Patient Journey</h4>
+    <h2>The Next Growth Frontier<span class="period">.</span></h2>
     <div class="green-line"></div>
     <p class="subtitle">The current SEO strategy successfully captures people who already know they need a sleep study. The next step is reaching the much larger audience who don't know yet &mdash; they're searching their symptoms.</p>
 
@@ -1212,7 +1212,7 @@ table.green-header th { background: var(--green); }
     </div>
 
     <div class="insight" style="margin-top: 32px;">
-      <p><strong>Every content piece designed with FAQ schema for AEO/AI Overview visibility.</strong> Google's Helpful Content Update eliminated 40%+ of low-quality sites from rankings &mdash; the bar for content quality has never been higher. Our approach creates clinically accurate, patient-focused content that meets both Google's E-E-A-T requirements and AI citation criteria. Each page works for both traditional search rankings and AI-generated answers.</p>
+      <p><strong>Every content piece designed with FAQ schema for AEO/AI Overview visibility.</strong> Google's Helpful Content Update eliminated 40%+ of low-quality sites from rankings &mdash; the bar for content quality has never been higher. Our approach creates clinically accurate, patient-focused content that meets both Google's E-E-A-T requirements and AI citation criteria. Each page works for both traditional search rankings and AI-generated answers. Content production is powered by <strong>Icaros</strong>, our proprietary SEO platform &mdash; purpose-built for quality at scale.</p>
     </div>
   </div>
 </section>
@@ -1291,43 +1291,43 @@ table.green-header th { background: var(--green); }
     <div class="card-grid">
       <div class="card">
         <div class="card-icon">
-          <span class="icon-inline" style="color: #D94343;">
+          <span class="icon-inline" style="color: var(--navy);">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
           </span>
         </div>
-        <h3>Links Requiring Attention</h3>
-        <p>DVA application page and CPAP cleaning card are returning 404 errors. Updating these will improve user trust and search engine signals.</p>
+        <h3>Link Updates</h3>
+        <p>DVA application page and CPAP cleaning card are returning 404 errors &mdash; easy fixes that will improve user trust and search engine signals.</p>
       </div>
       <div class="card">
         <div class="card-icon">
-          <span class="icon-inline" style="color: #D94343;">
+          <span class="icon-inline" style="color: var(--navy);">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </span>
         </div>
         <h3>FAQ &amp; UX Refinements</h3>
-        <p>FAQ section jumps cursor to top of page on click. Clinic locator needs updating for manual location entry. Resolving these will create a smoother patient experience.</p>
+        <p>FAQ section has a scroll jump on click, and the clinic locator could benefit from manual location entry. Small refinements that will create a smoother patient experience.</p>
       </div>
       <div class="card">
         <div class="card-icon">
-          <span class="icon-inline" style="color: #D94343;">
+          <span class="icon-inline" style="color: var(--navy);">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </span>
         </div>
-        <h3>Brand Inconsistency</h3>
-        <p>"Sleep Solution" vs "Sleep Solutions" vs "sleep solutions" appears across the site. Font inconsistencies throughout. COVID references still present and outdated.</p>
+        <h3>Brand Consistency</h3>
+        <p>Opportunity to unify "Sleep Solution" / "Sleep Solutions" / "sleep solutions" naming across the site. Font alignment and removing outdated COVID references will polish the brand presentation.</p>
       </div>
       <div class="card">
         <div class="card-icon">
-          <span class="icon-inline" style="color: #D94343;">
+          <span class="icon-inline" style="color: var(--navy);">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
           </span>
         </div>
         <h3>Booking Flow Update</h3>
-        <p>"Book Now" link needs updating &mdash; currently reloads the current page. Booking site banner requires attention for VIC. Fixing these will directly improve conversions.</p>
+        <p>"Book Now" link currently reloads the current page &mdash; a quick fix. Booking site banner for VIC also needs a small update. Both are easy wins that will directly improve conversions.</p>
       </div>
       <div class="card">
         <div class="card-icon">
-          <span class="icon-inline" style="color: #D94343;">
+          <span class="icon-inline" style="color: var(--navy);">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
           </span>
         </div>
@@ -1336,21 +1336,21 @@ table.green-header th { background: var(--green); }
       </div>
       <div class="card">
         <div class="card-icon">
-          <span class="icon-inline" style="color: #D94343;">
+          <span class="icon-inline" style="color: var(--navy);">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           </span>
         </div>
-        <h3>Static Trust Signals</h3>
-        <p>NDIS, DVA, and Vital 360 logos displayed as static images with no links. E-store "Shop Now" misleadingly leads to a registration page, not a shop.</p>
+        <h3>Trust Signal Enhancement</h3>
+        <p>NDIS, DVA, and Vital 360 logos are displayed but could be made clickable for added credibility. E-store "Shop Now" link currently leads to a registration page &mdash; aligning this with user expectations will improve trust.</p>
       </div>
       <div class="card">
         <div class="card-icon">
-          <span class="icon-inline" style="color: #D94343;">
+          <span class="icon-inline" style="color: var(--navy);">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="8" cy="10" r="2"/><path d="M14 8h4M14 12h4"/></svg>
           </span>
         </div>
-        <h3>Content &amp; UX Overload</h3>
-        <p>Banners rotate too quickly to read. Therapy and Diagnosis pages suffer from information overload. Font inconsistencies throughout reduce perceived quality.</p>
+        <h3>Content &amp; UX Polish</h3>
+        <p>Banner rotation timing could be slowed for readability. Therapy and Diagnosis pages have rich content that could be better structured for scannability. Font alignment will elevate the overall feel.</p>
       </div>
     </div>
   </div>
@@ -1369,12 +1369,12 @@ table.green-header th { background: var(--green); }
     <div class="two-col" style="margin-top: 40px;">
       <div>
         <div class="card" style="border-left: 4px solid var(--navy);">
-          <h3>Areas for Improvement</h3>
-          <ul class="cross-list" style="margin-top: 12px;">
-            <li>Burleigh clinic listed as "Medical supply store" &mdash; opportunity to better reflect patient care services</li>
-            <li>Not yet listed on healthdirect.gov.au platform</li>
-            <li>Opportunity to expand presence across key health directories</li>
-            <li>NAP (Name, Address, Phone) consistency can be improved across listings</li>
+          <h3>Quick-Win Opportunities</h3>
+          <ul class="check-list" style="margin-top: 12px;">
+            <li>Recategorise Burleigh clinic from "Medical supply store" to better reflect patient care services</li>
+            <li>Get listed on healthdirect.gov.au for additional authority</li>
+            <li>Expand presence across key health directories</li>
+            <li>Strengthen NAP (Name, Address, Phone) consistency across listings</li>
           </ul>
         </div>
       </div>
@@ -1405,7 +1405,7 @@ table.green-header th { background: var(--green); }
     <h4>Authority Building</h4>
     <h2>Link Building &amp; Domain Authority<span class="period">.</span></h2>
     <div class="green-line"></div>
-    <p class="subtitle">Great content paired with strong authority is what moves keywords to page 1. We build authority through multiple channels to strengthen ALH's competitive position.</p>
+    <p class="subtitle">Great content paired with strong authority is what moves keywords to page 1. We build authority through multiple channels &mdash; anchored by <strong>Icaros</strong>, our proprietary SEO platform &mdash; to strengthen ALH's competitive position.</p>
 
     <div class="card-grid" style="margin-top: 36px;">
       <div class="card">
@@ -1432,13 +1432,13 @@ table.green-header th { background: var(--green); }
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
           </span>
         </div>
-        <h3>Authority Network</h3>
-        <p>Our proprietary content platform and owned media network delivers contextual, authoritative links from relevant healthcare and wellness publications.</p>
+        <h3>Icaros Authority Network</h3>
+        <p>Our proprietary SEO platform, <strong>Icaros</strong>, powers an owned media network that delivers contextual, authoritative links from relevant healthcare and wellness publications. We own the infrastructure &mdash; no third-party dependency.</p>
       </div>
     </div>
 
     <div class="insight" style="margin-top: 28px;">
-      <p><strong>Target: increase referring domains by 30-50% in 12 months.</strong> A diversified link building strategy across healthcare directories, partnerships, content-driven PR, and our authority network creates compounding domain strength over time.</p>
+      <p><strong>Target: increase referring domains by 30-50% in 12 months.</strong> A diversified link building strategy across healthcare directories, partnerships, content-driven PR, and the Icaros authority network creates compounding domain strength over time.</p>
     </div>
   </div>
 </section>
@@ -1483,7 +1483,7 @@ table.green-header th { background: var(--green); }
         <h3>Authority Building</h3>
         <ul>
           <li>Link acquisition (directories, partnerships, PR)</li>
-          <li>Authority network deployment</li>
+          <li>Icaros authority network deployment</li>
           <li>Health directory submissions</li>
           <li>Content-driven PR campaigns</li>
         </ul>
@@ -1539,7 +1539,7 @@ table.green-header th { background: var(--green); }
           <p><strong>2. STOP-BANG quiz.</strong> Users take the sleep apnea questionnaire &mdash; adding a follow-up mechanism would convert engaged visitors into leads.</p>
         </div>
         <div class="card" style="margin-bottom: 16px; border-left: 4px solid var(--navy);">
-          <p><strong>3. Contact form response.</strong> Response time can be improved &mdash; our audit submission didn't receive a reply. Automation would solve this.</p>
+          <p><strong>3. Contact form response.</strong> There's an opportunity to speed up response times with automation &mdash; ensuring every enquiry gets a timely acknowledgement.</p>
         </div>
         <div class="card" style="margin-bottom: 16px; border-left: 4px solid var(--navy);">
           <p><strong>4. Email nurture.</strong> An opportunity to add automated follow-up sequences that keep patients engaged after their first visit.</p>
@@ -1563,42 +1563,42 @@ table.green-header th { background: var(--green); }
             <tbody>
               <tr>
                 <td>Lead capture on referral</td>
-                <td><span class="change-down">No</span></td>
+                <td><span class="change-flat">Not yet</span></td>
                 <td><span class="change-up">Yes</span></td>
               </tr>
               <tr>
                 <td>Email response time</td>
-                <td><span class="change-down">Needs improvement</span></td>
+                <td><span class="change-flat">Room to improve</span></td>
                 <td><span class="change-up">5 minutes</span></td>
               </tr>
               <tr>
                 <td>Chatbot / live support</td>
-                <td><span class="change-down">No</span></td>
+                <td><span class="change-flat">Not yet</span></td>
                 <td><span class="change-up">Yes</span></td>
               </tr>
               <tr>
                 <td>Patient testimonials</td>
-                <td><span class="change-down">None</span></td>
+                <td><span class="change-flat">Opportunity</span></td>
                 <td><span class="change-up">Video + written</span></td>
               </tr>
               <tr>
                 <td>Clear CTAs per page</td>
-                <td><span class="change-down">Needs updating</span></td>
+                <td><span class="change-flat">Can be strengthened</span></td>
                 <td><span class="change-up">Every page</span></td>
               </tr>
               <tr>
                 <td>Email nurture</td>
-                <td><span class="change-down">None</span></td>
+                <td><span class="change-flat">Opportunity</span></td>
                 <td><span class="change-up">Auto-sequence</span></td>
               </tr>
               <tr>
                 <td>Design &amp; UX</td>
-                <td><span class="change-down">Functional, clinical</span></td>
+                <td><span class="change-flat">Solid foundation</span></td>
                 <td><span class="change-up">Warm, interactive</span></td>
               </tr>
               <tr>
                 <td>Clinical data / authority</td>
-                <td><span class="change-down">Opportunity to add</span></td>
+                <td><span class="change-flat">Ready to add</span></td>
                 <td><span class="change-up">SLEEP 2025 conference</span></td>
               </tr>
             </tbody>
@@ -1606,7 +1606,7 @@ table.green-header th { background: var(--green); }
         </div>
 
         <div class="insight" style="margin-top: 20px;">
-          <p><strong>"The site has strong content &mdash; a rebuild transforms it into a conversion engine."</strong> Every patient interaction is an opportunity to capture a lead, nurture a relationship, and guide them toward booking. The rebuild closes these gaps and creates a seamless patient journey.</p>
+          <p><strong>"The site has strong content &mdash; a rebuild transforms it into a conversion engine."</strong> Every patient interaction is an opportunity to capture a lead, nurture a relationship, and guide them toward booking. The rebuild unlocks these opportunities and creates a seamless patient journey.</p>
         </div>
       </div>
     </div>
@@ -1855,7 +1855,7 @@ table.green-header th { background: var(--green); }
           </div>
         </div>
 
-        <p style="font-size: 0.85rem; margin-bottom: 16px;">The $2K increase reflects the shift from keyword management to a full content + authority strategy:</p>
+        <p style="font-size: 0.85rem; margin-bottom: 16px;">The $2K increase reflects the shift from keyword management to a full content + authority strategy &mdash; powered by <strong>Icaros</strong>, our proprietary SEO platform:</p>
 
         <ul class="check-list">
           <li>Full patient journey keyword strategy (200+ keywords)</li>
@@ -1863,7 +1863,7 @@ table.green-header th { background: var(--green); }
           <li>AEO / AI Overview optimisation</li>
           <li>Technical SEO maintenance &amp; monitoring</li>
           <li>Google Business Profile optimisation (all clinics)</li>
-          <li>Link building &amp; authority development</li>
+          <li>Link building &amp; Icaros authority network</li>
           <li>Monthly reporting with period comparison</li>
           <li>Quarterly strategy reviews</li>
         </ul>
@@ -1904,7 +1904,7 @@ table.green-header th { background: var(--green); }
       <div class="step">
         <div class="step-num">04</div>
         <h3>Expanded Retainer</h3>
-        <p>Transition to expanded SEO retainer to begin content production, AEO optimisation, and authority building at scale.</p>
+        <p>Transition to expanded SEO retainer to begin Icaros-powered content production, AEO optimisation, and authority building at scale.</p>
         <p style="font-size: 0.75rem; color: var(--green); margin-top: 12px; font-weight: 600;">MONTH 2</p>
       </div>
     </div>
