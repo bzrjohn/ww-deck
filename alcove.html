@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Covert Digital × Alcove — March 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@font-face { font-family: 'Apercu'; src: url('https://www.covert.com.au/wp-content/themes/lf-covert/assets/fonts/Apercu-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'Apercu'; src: url('https://www.covert.com.au/wp-content/themes/lf-covert/assets/fonts/Apercu-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; }
+@font-face { font-family: 'Apercu'; src: url('https://www.covert.com.au/wp-content/themes/lf-covert/assets/fonts/Apercu-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; }
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #33334C;
+  --green: #3E936C;
+  --dark-green: #017F4E;
+  --green-pale: #EAF5F0;
+  --grey: #43464E;
+  --grey-light: #9E9E9E;
+  --bg: #FFFFFF;
+  --bg-alt: #F8F5F7;
+  --dark: #222222;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 6px 20px rgba(0,0,0,0.07), 0 2px 6px rgba(0,0,0,0.04);
+  --shadow-lg: 0 12px 36px rgba(0,0,0,0.09), 0 4px 12px rgba(0,0,0,0.05);
+  --radius: 16px;
+  --radius-sm: 12px;
+}
+html { font-size: 16px; scroll-behavior: smooth; }
+body { font-family: 'Poppins', sans-serif; color: var(--grey); background: var(--bg); -webkit-font-smoothing: antialiased; line-height: 1.65; }
+
+/* SLIDE SYSTEM */
+.slide { width: 100%; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 80px; position: relative; }
+.slide-inner { max-width: 1160px; width: 100%; }
+.slide-alt { background: var(--bg-alt); }
+.slide-green { background: var(--green); color: white; }
+.slide-navy { background: var(--navy); color: white; }
+
+/* TYPE */
+h1, h2, h3 { font-family: 'Apercu', 'Poppins', sans-serif; }
+h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.08; color: var(--navy); letter-spacing: -0.02em; }
+h2 { font-size: 2.7rem; font-weight: 700; line-height: 1.12; color: var(--navy); letter-spacing: -0.015em; margin-bottom: 6px; }
+h3 { font-size: 1.3rem; font-weight: 600; color: var(--navy); line-height: 1.35; }
+h4 { font-family: 'Poppins', sans-serif; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--green); margin-bottom: 14px; }
+p { line-height: 1.7; font-family: 'Poppins', sans-serif; }
+.period { color: var(--green); }
+.green { color: var(--green); }
+.green-line { width: 54px; height: 3px; background: var(--green); margin: 20px 0; border-radius: 2px; }
+.subtitle { font-size: 1.08rem; color: var(--grey); line-height: 1.75; max-width: 700px; }
+.dim { color: var(--grey-light); }
+
+/* COVER */
+.cover { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
+.cover-left { padding: 80px 80px 80px 100px; display: flex; flex-direction: column; justify-content: center; background: var(--bg); }
+.cover-right { background: linear-gradient(135deg, var(--green) 0%, var(--dark-green) 100%); display: flex; align-items: center; justify-content: center; padding: 60px; }
+.cover-right-inner { text-align: center; color: white; }
+.cover-right-inner .big-stat { font-family: 'Apercu', 'Poppins', sans-serif; font-size: 6rem; font-weight: 700; line-height: 1; letter-spacing: -0.03em; text-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+.cover-right-inner .stat-label { font-size: 1.05rem; font-weight: 400; opacity: 0.85; margin-top: 18px; line-height: 1.55; }
+.cover-logo { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--green); font-weight: 700; margin-bottom: 40px; }
+.cover h1 { margin-bottom: 16px; }
+.cover-sub { font-size: 1.15rem; color: var(--grey); margin-bottom: 48px; font-weight: 300; letter-spacing: 0.01em; }
+.cover-meta { display: flex; gap: 40px; }
+.cover-meta-item span:first-child { display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey-light); font-weight: 600; margin-bottom: 4px; }
+.cover-meta-item span:last-child { font-size: 0.9rem; color: var(--dark); font-weight: 500; }
+
+/* SECTION DIVIDER */
+.section-divider { text-align: left; overflow: hidden; }
+.section-divider::before { content: ''; position: absolute; top: -40%; right: -15%; width: 800px; height: 800px; border-radius: 50%; background: rgba(255,255,255,0.04); pointer-events: none; }
+.section-divider::after { content: ''; position: absolute; bottom: -25%; left: -8%; width: 600px; height: 600px; border-radius: 50%; background: rgba(255,255,255,0.035); pointer-events: none; }
+.section-divider .slide-inner { display: flex; align-items: center; gap: 72px; position: relative; z-index: 1; }
+.section-number { font-family: 'Apercu', 'Poppins', sans-serif; font-size: 14rem; font-weight: 700; opacity: 0.12; color: white; line-height: 1; min-width: 200px; letter-spacing: -0.04em; }
+.section-divider h2 { color: white; font-size: 3.6rem; letter-spacing: -0.02em; margin-bottom: 0; }
+.section-divider p { color: rgba(255,255,255,0.85); font-size: 1.15rem; max-width: 580px; margin-top: 22px; line-height: 1.8; }
+.slide-green.section-divider { background: linear-gradient(135deg, var(--green) 0%, var(--dark-green) 100%); }
+.slide-navy.section-divider { background: linear-gradient(135deg, var(--navy) 0%, #252540 100%); }
+
+/* CARDS */
+.card { background: white; border-radius: var(--radius); padding: 36px; box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.05); transition: box-shadow 0.3s ease, transform 0.3s ease; }
+.card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 40px; }
+.card-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; margin-top: 40px; }
+.card-grid-4 > * { min-width: 0; }
+.card-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 40px; }
+.card h3 { margin-bottom: 14px; }
+.card p { color: var(--grey); font-size: 0.9rem; line-height: 1.7; }
+.card .card-icon { font-size: 2.6rem; margin-bottom: 18px; display: block; }
+.card .card-icon svg { display: inline-block; vertical-align: middle; }
+.icon-inline { display: inline-flex; align-items: center; justify-content: center; color: var(--green); vertical-align: middle; }
+.icon-inline svg { display: block; }
+.icon-inline-sm { display: inline-flex; align-items: center; justify-content: center; color: var(--green); vertical-align: middle; }
+.icon-inline-sm svg { display: block; }
+.icon-hero { display: inline-flex; align-items: center; justify-content: center; color: var(--green); vertical-align: middle; }
+.icon-hero svg { display: block; }
+
+/* STATS */
+.stat-row { display: flex; gap: 60px; margin: 48px 0; flex-wrap: wrap; }
+.stat-val { font-family: 'Apercu', 'Poppins', sans-serif; font-size: 3.8rem; font-weight: 700; color: var(--green); line-height: 1.05; letter-spacing: -0.025em; }
+.stat-val-lg { font-size: 5.5rem; letter-spacing: -0.03em; }
+.stat-val-navy { color: var(--navy); }
+.stat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--grey); margin-top: 12px; font-weight: 600; line-height: 1.4; }
+.stat-sub { font-size: 0.8rem; color: var(--grey-light); margin-top: 4px; }
+
+/* INSIGHT BOX */
+.insight { background: var(--green-pale); border-left: 4px solid var(--green); padding: 30px 34px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 36px 0; }
+.insight p { color: var(--grey); font-size: 0.9rem; line-height: 1.75; }
+.insight strong { color: var(--dark); }
+.insight-navy { background: #EEEEF3; border-left-color: var(--navy); }
+
+/* TWO COL */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+
+/* TABLE */
+table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.82rem; table-layout: auto; }
+th { background: var(--navy); color: #ffffff; padding: 12px 14px; text-align: left; font-weight: 600; white-space: nowrap; font-size: 0.78rem; letter-spacing: 0.02em; }
+th:first-child { border-radius: 10px 0 0 0; }
+th:last-child { border-radius: 0 10px 0 0; }
+td { padding: 11px 14px; border-bottom: 1px solid #e8e8e8; vertical-align: top; word-wrap: break-word; overflow-wrap: break-word; color: var(--grey); }
+td strong { color: var(--dark); }
+tr:nth-child(even) td { background: #f7f7f9; }
+tr:last-child td:first-child { border-radius: 0 0 0 10px; }
+tr:last-child td:last-child { border-radius: 0 0 10px 0; }
+tr:last-child td { border-bottom: none; }
+table.green-header th { background: var(--green); }
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.04); }
+.card, .two-col > div, .card-grid > div, .card-grid-2 > div { overflow-x: auto; min-width: 0; }
+
+/* STEPS */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin: 48px 0; }
+.step { text-align: center; padding: 48px 28px; background: white; border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.05); box-shadow: var(--shadow-sm); transition: box-shadow 0.3s ease, transform 0.3s ease; }
+.step:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.step-num { font-family: 'Apercu', 'Poppins', sans-serif; font-size: 2.8rem; font-weight: 700; color: var(--green); margin-bottom: 18px; }
+.step h3 { font-size: 1.08rem; margin-bottom: 14px; }
+.step p { font-size: 0.85rem; color: var(--grey); line-height: 1.65; }
+
+/* CLOSING */
+.closing { text-align: center; background: var(--bg-alt); }
+.closing h2 { margin-bottom: 18px; }
+.contact-row { display: flex; gap: 72px; justify-content: center; margin-top: 52px; flex-wrap: wrap; }
+.contact-item h4 { margin-bottom: 10px; }
+.contact-item p { font-size: 0.95rem; color: var(--dark); }
+
+/* CHECK LIST */
+.check-list { list-style: none; }
+.check-list li { padding: 8px 0 8px 32px; position: relative; font-size: 0.9rem; color: var(--grey); line-height: 1.6; }
+.check-list li::before { content: '\2713'; position: absolute; left: 0; color: var(--green); font-weight: 700; font-size: 1.05rem; }
+.cross-list { list-style: none; }
+.cross-list li { padding: 8px 0 8px 32px; position: relative; font-size: 0.9rem; color: var(--grey); line-height: 1.6; }
+.cross-list li::before { content: '\2794'; position: absolute; left: 0; color: var(--navy); font-weight: 700; font-size: 1.05rem; }
+
+/* TIMELINE */
+.timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; }
+.tl-item { position: relative; padding: 30px 24px; border-radius: var(--radius); border: 2px solid #e8e8e8; background: white; box-shadow: var(--shadow-sm); transition: box-shadow 0.25s ease; }
+.tl-item-active { border-color: var(--green); background: var(--green-pale); box-shadow: 0 4px 16px rgba(62,147,108,0.12); }
+.tl-month { font-family: 'Apercu', 'Poppins', sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--green); font-weight: 700; margin-bottom: 12px; }
+.tl-item h3 { font-size: 1.05rem; margin-bottom: 14px; }
+.tl-item ul { list-style: none; }
+.tl-item li { font-size: 0.78rem; color: var(--grey); padding: 5px 0 5px 20px; position: relative; line-height: 1.5; }
+.tl-item li::before { content: ''; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+.tl-val { font-family: 'Apercu', 'Poppins', sans-serif; font-size: 2rem; font-weight: 700; color: var(--green); margin-top: 18px; letter-spacing: -0.02em; }
+.tl-val-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey-light); margin-top: 4px; }
+
+/* PIPELINE / FUNNEL */
+.pipeline { display: flex; align-items: stretch; gap: 0; margin: 40px 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); }
+.pipeline-step { flex: 1; padding: 28px 20px; text-align: center; background: var(--green-pale); border-right: 3px solid var(--green); position: relative; }
+.pipeline-step:last-child { border-right: none; }
+.pipeline-step::after { content: '\2192'; position: absolute; right: -14px; top: 50%; transform: translateY(-50%); font-size: 1.3rem; color: var(--green); font-weight: 700; z-index: 1; }
+.pipeline-step:last-child::after { display: none; }
+.pipeline-step h3 { font-size: 0.9rem; margin-bottom: 8px; color: var(--navy); }
+.pipeline-step p { font-size: 0.78rem; color: var(--grey); line-height: 1.5; }
+.pipeline-step .pipe-icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
+
+.funnel { margin: 48px auto; max-width: 700px; }
+.funnel-stage { padding: 18px 32px; text-align: center; color: white; font-weight: 600; font-size: 0.88rem; position: relative; }
+.funnel-stage:first-child { border-radius: var(--radius) var(--radius) 0 0; }
+.funnel-stage:last-child { border-radius: 0 0 var(--radius) var(--radius); }
+
+/* WIREFRAME BOX */
+.wireframe { border: 2px dashed var(--green); border-radius: var(--radius); padding: 30px; margin: 20px 0; background: var(--green-pale); }
+.wireframe h3 { font-size: 0.95rem; margin-bottom: 16px; color: var(--navy); }
+.wireframe-section { background: white; border-radius: 10px; padding: 13px 18px; margin: 9px 0; border: 1px solid #e0e0e0; font-size: 0.82rem; color: var(--grey); line-height: 1.55; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+
+/* CHANGE INDICATORS */
+.change-up { color: var(--green); font-weight: 700; }
+.change-down { color: #C07A2A; font-weight: 700; }
+.change-flat { color: var(--grey-light); font-weight: 600; }
+
+/* SMOOTH SLIDE SEPARATION */
+.slide + .slide { border-top: 1px solid rgba(0,0,0,0.05); }
+.slide-green + .slide, .slide-navy + .slide, .slide + .slide-green, .slide + .slide-navy { border-top: none; }
+.slide-alt + .slide:not(.slide-alt) { border-top: none; }
+.slide:not(.slide-alt) + .slide-alt { border-top: none; }
+
+/* ============================================================
+   RESPONSIVE — TABLET (max-width: 900px)
+   ============================================================ */
+@media (max-width: 900px) {
+  .slide { padding: 48px 24px; }
+  .cover { grid-template-columns: 1fr; }
+  .cover-left { padding: 48px 24px; }
+  .cover-right { min-height: 40vh; }
+  h1 { font-size: 2.4rem; }
+  h2 { font-size: 2rem; }
+  .two-col, .card-grid, .card-grid-4, .steps, .timeline { grid-template-columns: 1fr !important; }
+  .card-grid-2 { grid-template-columns: 1fr !important; }
+  .stat-row { gap: 32px; }
+  .section-divider .slide-inner { flex-direction: column; gap: 20px; }
+  .section-number { font-size: 6rem; }
+  .stat-val { font-size: 2.2rem; }
+  .stat-val-lg { font-size: 2.8rem; }
+  .pipeline { flex-direction: column; border-radius: var(--radius); }
+  .pipeline-step { border-right: none; border-bottom: 3px solid var(--green); }
+  .pipeline-step:last-child { border-bottom: none; }
+  .pipeline-step::after { display: none; }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE (max-width: 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+  .slide { padding: 32px 20px; min-height: auto; }
+  .slide-inner { max-width: 100%; }
+  .slide + .slide { border-top: 3px solid rgba(0,0,0,0.08); }
+  .slide-green + .slide, .slide-navy + .slide, .slide + .slide-green, .slide + .slide-navy { border-top: none; }
+  .slide-alt + .slide:not(.slide-alt), .slide:not(.slide-alt) + .slide-alt { border-top: 3px solid rgba(0,0,0,0.08); }
+  .cover { grid-template-columns: 1fr; min-height: auto; }
+  .cover-left { padding: 40px 20px 32px; }
+  .cover-right { min-height: auto; padding: 40px 20px; }
+  .cover-right-inner .big-stat { font-size: 3.5rem; }
+  .cover-right-inner .stat-label { font-size: 0.9rem; margin-top: 12px; }
+  .cover-meta { flex-direction: column; gap: 16px; }
+  .cover-sub { font-size: 1rem; margin-bottom: 28px; }
+  .cover h1 { font-size: 2rem; }
+  h1 { font-size: 1.8rem; line-height: 1.15; }
+  h2 { font-size: 1.4rem; line-height: 1.2; }
+  h3 { font-size: 1.1rem; }
+  p, .subtitle { font-size: 0.88rem; line-height: 1.6; }
+  .subtitle { max-width: 100%; }
+  .section-divider { padding: 48px 20px; }
+  .section-divider .slide-inner { flex-direction: column; gap: 12px; }
+  .section-number { font-size: 4.5rem; min-width: auto; }
+  .section-divider h2 { font-size: 1.8rem; }
+  .section-divider p { font-size: 0.9rem; max-width: 100%; margin-top: 12px; }
+  .card-grid, .card-grid-2, .card-grid-4 { grid-template-columns: 1fr !important; gap: 16px; margin-top: 24px; }
+  .card { padding: 24px 20px; }
+  .card .card-icon { font-size: 2rem; margin-bottom: 12px; }
+  .two-col { grid-template-columns: 1fr !important; gap: 24px; }
+  .stat-row { gap: 20px; margin: 28px 0; }
+  .stat-val { font-size: 2rem; }
+  .stat-val-lg { font-size: 2.4rem; }
+  .stat-label { font-size: 0.68rem; margin-top: 8px; }
+  table { font-size: 0.72rem; margin: 1rem 0; min-width: 500px; }
+  th { padding: 8px 10px; font-size: 0.68rem; white-space: nowrap; }
+  td { padding: 8px 10px; font-size: 0.72rem; }
+  .table-wrap { margin: 1rem 0; border-radius: var(--radius-sm); }
+  .slide-inner, .card, .two-col > div, .insight, .wireframe { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .steps { grid-template-columns: 1fr !important; gap: 16px; margin: 28px 0; }
+  .step { padding: 28px 20px; }
+  .step-num { font-size: 2rem; margin-bottom: 12px; }
+  .timeline { grid-template-columns: 1fr !important; gap: 16px; }
+  .tl-item { padding: 24px 20px; }
+  .tl-val { font-size: 1.6rem; }
+  .pipeline { flex-direction: column; }
+  .pipeline-step { border-right: none; border-bottom: 2px solid var(--green); padding: 20px 16px; }
+  .pipeline-step:last-child { border-bottom: none; }
+  .pipeline-step::after { display: none; }
+  .insight { padding: 20px 18px; margin: 24px 0; }
+  .insight p { font-size: 0.84rem; }
+  .contact-row { flex-direction: column; gap: 24px; align-items: center; margin-top: 32px; }
+  img, svg, video, iframe { max-width: 100%; height: auto; }
+  .check-list li { font-size: 0.84rem; padding: 6px 0 6px 28px; }
+  .green-line { width: 40px; margin: 14px 0; }
+  .card:hover, .step:hover, .tl-item:hover { transform: none; box-shadow: var(--shadow-sm); }
+  .funnel-stage { padding: 14px 20px; font-size: 0.78rem; }
+}
+
+/* ============================================================
+   RESPONSIVE — SMALL MOBILE (max-width: 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+  .slide { padding: 24px 16px; }
+  .cover-left { padding: 32px 16px 24px; }
+  .cover-right { padding: 32px 16px; }
+  .cover-right-inner .big-stat { font-size: 2.8rem; }
+  .cover h1 { font-size: 1.6rem; }
+  .cover-sub { font-size: 0.9rem; margin-bottom: 20px; }
+  .cover-logo { font-size: 0.6rem; margin-bottom: 24px; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  h3 { font-size: 1rem; }
+  h4 { font-size: 0.68rem; }
+  p { font-size: 0.85rem; line-height: 1.55; }
+  .section-divider { padding: 36px 16px; }
+  .section-number { font-size: 3.5rem; }
+  .section-divider h2 { font-size: 1.5rem; }
+  .section-divider p { font-size: 0.82rem; line-height: 1.6; }
+  .stat-val { font-size: 1.6rem; }
+  .stat-val-lg { font-size: 2rem; }
+  .stat-label { font-size: 0.62rem; }
+  .card { padding: 20px 16px; border-radius: 12px; }
+  .card-grid, .card-grid-2, .card-grid-4 { gap: 12px; margin-top: 20px; }
+  table { font-size: 0.68rem; min-width: 420px; }
+  th { padding: 6px 8px; font-size: 0.64rem; }
+  td { padding: 6px 8px; font-size: 0.68rem; }
+  .step { padding: 24px 16px; }
+  .step-num { font-size: 1.6rem; }
+  .tl-item { padding: 20px 16px; }
+  .tl-val { font-size: 1.4rem; }
+  .tl-month { font-size: 0.65rem; }
+  .tl-item h3 { font-size: 0.9rem; }
+  .tl-item li { font-size: 0.72rem; }
+  .wireframe { padding: 16px 12px; }
+  .wireframe-section { padding: 8px 12px; font-size: 0.74rem; }
+  .contact-row { gap: 20px; }
+  .contact-item p { font-size: 0.85rem; }
+  .closing h2 { font-size: 1.3rem; }
+  .funnel-stage { padding: 12px 16px; font-size: 0.72rem; }
+}
+
+@media print {
+  .slide { min-height: auto; page-break-after: always; padding: 48px 40px; }
+  .slide:last-child { page-break-after: avoid; }
+  .card, .step, .tl-item { box-shadow: none !important; transform: none !important; }
+  .card:hover, .step:hover { box-shadow: none !important; transform: none !important; }
+  .section-divider::before, .section-divider::after { display: none; }
+  .slide + .slide { border-top: none; }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  table { page-break-inside: avoid; }
+  .card-grid, .card-grid-2, .card-grid-4 { page-break-inside: avoid; }
+  .insight { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     SLIDE 1 — COVER
+     ============================================================ -->
+<section class="cover" id="slide-1">
+  <div class="cover-left">
+    <div class="cover-logo">Covert Digital</div>
+    <h1>Paid Social &amp; SEO Growth Strategy<span class="period">.</span></h1>
+    <p class="cover-sub">Alcove &mdash; a comprehensive proposal for paid social lead generation and organic search dominance.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span>Prepared for</span>
+        <span>Alcove</span>
+      </div>
+      <div class="cover-meta-item">
+        <span>Date</span>
+        <span>March 2026</span>
+      </div>
+      <div class="cover-meta-item">
+        <span>Prepared by</span>
+        <span>Covert Digital</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-right">
+    <div class="cover-right-inner">
+      <div class="big-stat" style="color: white;">$3B+</div>
+      <div class="stat-label" style="color: white; opacity: 0.9;">In settled loans<br>Australia's #1 ranked broker</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 2 — SECTION 1 DIVIDER: PAID SOCIAL
+     ============================================================ -->
+<section class="slide slide-green section-divider" id="slide-2">
+  <div class="slide-inner">
+    <div class="section-number">01</div>
+    <div>
+      <h2>Paid Social Lead Generation<span style="color: rgba(255,255,255,0.3);">.</span></h2>
+      <p>A targeted funnel to reach Australia's tech professionals &mdash; the highest-value borrowers that traditional banks consistently underserve.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 3 — THE OPPORTUNITY
+     ============================================================ -->
+<section class="slide" id="slide-3">
+  <div class="slide-inner">
+    <h4>The Opportunity</h4>
+    <h2>Banks Don't Understand How Tech Gets Paid<span class="period">.</span></h2>
+    <div class="green-line"></div>
+    <p class="subtitle">Restricted Stock Units (RSUs) are a core part of compensation at companies like Google, Meta, Amazon, Atlassian, and Canva. But most Australian banks discount or ignore RSU income entirely &mdash; costing tech professionals hundreds of thousands in borrowing capacity.</p>
+
+    <div class="stat-row">
+      <div>
+        <div class="stat-val">150K+</div>
+        <div class="stat-label">Tech Professionals<br>in Australia</div>
+      </div>
+      <div>
+        <div class="stat-val">$200K+</div>
+        <div class="stat-label">Avg Total Comp<br>(Incl. RSU Income)</div>
+      </div>
+      <div>
+        <div class="stat-val stat-val-navy">80%</div>
+        <div class="stat-label">Of Banks Discount<br>RSU Income</div>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top: 36px;">
+      <div>
+        <h3 style="margin-bottom: 20px;">The Problem</h3>
+        <ul class="cross-list">
+          <li>Banks treat RSUs as "variable" or "bonus" income &mdash; discounting it by 50-80%</li>
+          <li>Standard brokers don't know how to structure RSU income for lender approval</li>
+          <li>Tech professionals get told they can borrow $800K when they should qualify for $1.2M+</li>
+          <li>No one is speaking directly to this audience in Australia's mortgage market</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 20px;">The Alcove Advantage</h3>
+        <ul class="check-list">
+          <li>Alex Pagonis and the Alcove Tech team specialise exclusively in tech professional lending</li>
+          <li>Deep relationships with lenders who accept RSU income at full value</li>
+          <li>Proven outcomes: Google engineer +$224K borrowing capacity, Atlassian couple $1.3M funded</li>
+          <li>Already built the infrastructure: RSU Borrowing Capacity Calculator on rsulending.com.au</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top: 32px;">
+      <p><strong>This is a blue ocean.</strong> No other broker in Australia is running paid social specifically targeting tech professionals with RSU income. Alcove Tech has the positioning, the expertise, and the proof points. The missing piece is a systematic acquisition engine to reach this audience at scale.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 4 — TARGET AUDIENCE
+     ============================================================ -->
+<section class="slide slide-alt" id="slide-4">
+  <div class="slide-inner">
+    <h4>Target Audience</h4>
+    <h2>The Tech Professional Persona<span class="period">.</span></h2>
+    <div class="green-line"></div>
+    <p class="subtitle">High-income, equity-compensated professionals who are being underserved by traditional lenders and generic mortgage brokers.</p>
+
+    <div class="card-grid" style="margin-top: 36px;">
+      <div class="card">
+        <div class="card-icon">
+          <span class="icon-inline" style="color: var(--green);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </span>
+        </div>
+        <h3>Big Tech Employees</h3>
+        <p>Software engineers, product managers, data scientists, and leaders at Google, Meta, Amazon, Apple, Atlassian, and Canva. Total comp $180K&ndash;$500K+ with 30&ndash;60% in RSUs.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <span class="icon-inline" style="color: var(--green);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+          </span>
+        </div>
+        <h3>Founders &amp; Startup Operators</h3>
+        <p>Startup founders, CTOs, and early employees with equity stakes. Complex income structures that banks struggle to assess &mdash; part salary, part equity, part dividends.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <span class="icon-inline" style="color: var(--green);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </span>
+        </div>
+        <h3>Life Stage Triggers</h3>
+        <p>First home purchase, upgrading after IPO/vesting event, investment property acquisition, refinancing to consolidate. Key moments where RSU expertise delivers outsized value.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 28px; border-left: 4px solid var(--green); background: var(--green-pale);">
+      <h3 style="font-size: 1rem;">Pain Points We Solve</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px;">
+        <div>
+          <p style="font-size: 0.85rem;"><strong>"My bank says I can only borrow $800K"</strong> &mdash; when their real capacity is $1.2M+ once RSUs are structured correctly</p>
+        </div>
+        <div>
+          <p style="font-size: 0.85rem;"><strong>"My broker doesn't understand RSUs"</strong> &mdash; generic brokers treat equity comp as a complication, not an opportunity</p>
+        </div>
+        <div>
+          <p style="font-size: 0.85rem;"><strong>"I've been pre-approved for less than I need"</strong> &mdash; vesting schedules and stock grants need specialist structuring</p>
+        </div>
+        <div>
+          <p style="font-size: 0.85rem;"><strong>"I'm waiting for my RSUs to vest before buying"</strong> &mdash; often unnecessary with the right lender and structure</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 5 — THE FUNNEL
+     ============================================================ -->
+<section class="slide" id="slide-5">
+  <div class="slide-inner">
+    <h4>The Strategy</h4>
+    <h2>Full-Funnel Lead Generation<span class="period">.</span></h2>
+    <div class="green-line"></div>
+    <p class="subtitle">A three-stage funnel designed to take tech professionals from awareness to booked strategy call &mdash; with content and conversion points at every stage.</p>
+
+    <div class="pipeline" style="margin-top: 48px;">
+      <div class="pipeline-step" style="background: var(--green); color: white; border-right-color: var(--dark-green);">
+        <div class="pipe-icon">
+          <span style="color: white;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          </span>
+        </div>
+        <h3 style="color: white;">TOF &mdash; Awareness</h3>
+        <p style="color: rgba(255,255,255,0.9);">Video ads ft. Alex Pagonis on LinkedIn + YouTube. Myth-busting content, RSU education, client success stories.</p>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipe-icon">
+          <span class="icon-inline" style="color: var(--green);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </span>
+        </div>
+        <h3>MOF &mdash; Engagement</h3>
+        <p>RSU Borrowing Capacity Calculator, downloadable guides, webinar registrations. HubSpot email nurture sequences.</p>
+      </div>
+      <div class="pipeline-step" style="background: var(--navy); color: white; border-right: none;">
+        <div class="pipe-icon">
+          <span style="color: white;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </span>
+        </div>
+        <h3 style="color: white;">BOF &mdash; Conversion</h3>
+        <p style="color: rgba(255,255,255,0.9);">Strategy call booking via retargeting. Personalised outreach to engaged leads. Social proof from real client outcomes.</p>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top: 40px;">
+      <div>
+        <h3 style="margin-bottom: 16px;">TOF Content Themes</h3>
+        <ul class="check-list">
+          <li>"Banks don't understand how tech professionals get paid" (hook)</li>
+          <li>"How RSUs affect your borrowing capacity" (education)</li>
+          <li>"Google engineer unlocked +$224K in borrowing" (proof)</li>
+          <li>Australian Property Podcast clips featuring Chris Bates</li>
+          <li>Short-form video tips from Alex Pagonis</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 16px;">BOF Conversion Triggers</h3>
+        <ul class="check-list">
+          <li>Calculator completions retargeted with strategy call CTA</li>
+          <li>Guide downloaders entered into HubSpot nurture sequence</li>
+          <li>Video viewers (75%+) retargeted on Meta + LinkedIn</li>
+          <li>Testimonial-led ads featuring real Alcove Tech client outcomes</li>
+          <li>Urgency hooks: vesting events, rate changes, market timing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 6 — PLATFORM STRATEGY
+     ============================================================ -->
+<section class="slide slide-alt" id="slide-6">
+  <div class="slide-inner">
+    <h4>Platform Strategy</h4>
+    <h2>Where We Reach Them<span class="period">.</span></h2>
+    <div class="green-line"></div>
+    <p class="subtitle">Three platforms, each with a distinct role in the funnel. LinkedIn leads for precision targeting, Meta for retargeting at scale, YouTube for authority-building video content.</p>
+
+    <div class="card-grid" style="margin-top: 36px;">
+      <div class="card" style="border-top: 4px solid #0A66C2;">
+        <div class="card-icon">
+          <span class="icon-inline" style="color: #0A66C2;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </span>
+        </div>
+        <h3>LinkedIn <span class="dim">&mdash; Primary</span></h3>
+        <p style="margin-bottom: 12px;">The only platform where we can target by employer (Google, Meta, Atlassian, Canva), job title (Software Engineer, Product Manager), and seniority level simultaneously.</p>
+        <ul class="check-list">
+          <li>Employer + seniority targeting for precision</li>
+          <li>Sponsored content (video + carousel)</li>
+          <li>Lead gen forms with calculator CTA</li>
+          <li>Thought leader ads from Alex's profile</li>
+        </ul>
+      </div>
+      <div class="card" style="border-top: 4px solid #1877F2;">
+        <div class="card-icon">
+          <span class="icon-inline" style="color: #1877F2;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </span>
+        </div>
+        <h3>Meta <span class="dim">&mdash; Retargeting</span></h3>
+        <p style="margin-bottom: 12px;">Unmatched retargeting capabilities and lookalike audience building. Lower CPMs than LinkedIn make it ideal for nurturing and conversion-stage campaigns.</p>
+        <ul class="check-list">
+          <li>Website visitor + calculator user retargeting</li>
+          <li>Lookalike audiences from HubSpot CRM data</li>
+          <li>Carousel ads with client success stories</li>
+          <li>Instagram Reels for short-form video reach</li>
+        </ul>
+      </div>
+      <div class="card" style="border-top: 4px solid #FF0000;">
+        <div class="card-icon">
+          <span class="icon-inline" style="color: #FF0000;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </span>
+        </div>
+        <h3>YouTube <span class="dim">&mdash; Authority</span></h3>
+        <p style="margin-bottom: 12px;">Long-form and short-form video content positions Alex and Alcove Tech as the authority on RSU lending. Pre-roll targeting reaches tech audiences consuming relevant content.</p>
+        <ul class="check-list">
+          <li>Pre-roll ads on finance + tech channels</li>
+          <li>YouTube Shorts from Alex (tips, myth-busting)</li>
+          <li>Podcast clip repurposing from Australian Property Podcast</li>
+          <li>Retargeting video viewers across Google network</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top: 28px;">
+      <p><strong>LinkedIn is the engine, Meta is the amplifier, YouTube is the authority builder.</strong> This multi-platform approach ensures Alcove Tech is visible wherever tech professionals spend their time &mdash; from their professional feed to their evening scroll to their commute content.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 7 — CONTENT & CREATIVE
+     ============================================================ -->
+<section class="slide" id="slide-7">
+  <div class="slide-inner">
+    <h4>Content &amp; Creative</h4>
+    <h2>Alex as the Face of Alcove Tech<span class="period">.</span></h2>
+    <div class="green-line"></div>
+    <p class="subtitle">Video-first content strategy with Alex Pagonis as the subject matter expert. Authentic, educational content that builds trust before the first conversation.</p>
+
+    <div class="two-col" style="margin-top: 40px;">
+      <div>
+        <h3 style="margin-bottom: 20px;">Video Content Formats</h3>
+        <div class="card" style="margin-bottom: 16px; border-left: 4px solid var(--green);">
+          <h3 style="font-size: 0.95rem;">Quick Tips (15&ndash;30s)</h3>
+          <p style="font-size: 0.85rem;">"Did you know most banks discount your RSU income by 50%?" &mdash; punchy hooks for LinkedIn and Reels. High volume, high reach.</p>
+        </div>
+        <div class="card" style="margin-bottom: 16px; border-left: 4px solid var(--green);">
+          <h3 style="font-size: 0.95rem;">Client Stories (60&ndash;90s)</h3>
+          <p style="font-size: 0.85rem;">"How we helped a Google engineer unlock an extra $224K in borrowing capacity" &mdash; social proof that demonstrates real outcomes for real people.</p>
+        </div>
+        <div class="card" style="margin-bottom: 16px; border-left: 4px solid var(--green);">
+          <h3 style="font-size: 0.95rem;">Myth-Busting (30&ndash;60s)</h3>
+          <p style="font-size: 0.85rem;">"You don't need to wait for your RSUs to vest before buying" &mdash; challenging misconceptions that keep tech professionals from acting.</p>
+        </div>
+        <div class="card" style="border-left: 4px solid var(--green);">
+          <h3 style="font-size: 0.95rem;">Podcast Clips (60&ndash;120s)</h3>
+          <p style="font-size: 0.85rem;">Repurposed segments from Australian Property Podcast featuring Chris Bates. Authority-building content that leverages an existing audience of 100K+ listeners.</p>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 20px;">Creative Strategy</h3>
+        <div class="card" style="background: var(--green-pale); border: 2px solid var(--green);">
+          <h3 style="font-size: 1rem;">Why Video Works Here</h3>
+          <p style="font-size: 0.85rem; margin-bottom: 16px;">Financial services is built on trust. Tech professionals are sophisticated buyers who research before they act. Video lets Alex demonstrate expertise in a way that text-based ads simply can't match.</p>
+          <ul class="check-list">
+            <li>Talking-head format &mdash; Alex speaking directly to camera builds personal connection</li>
+            <li>Screen-share walkthroughs of the RSU calculator create tangible value</li>
+            <li>Behind-the-scenes of real client journeys (with permission) build authenticity</li>
+            <li>Native-feeling content outperforms polished corporate ads on LinkedIn and Meta</li>
+          </ul>
+        </div>
+        <div class="insight" style="margin-top: 20px;">
+          <p><strong>Production cadence:</strong> Monthly shoot day with Alex producing 8&ndash;12 content pieces (mix of formats). Podcast clips repurposed weekly. This creates a consistent, sustainable content engine without excessive time commitment from Alex.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 8 — MOF ASSETS
+     ============================================================ -->
+<section class="slide slide-alt" id="slide-8">
+  <div class="slide-inner">
+    <h4>Middle of Funnel</h4>
+    <h2>Conversion Assets &amp; Lead Capture<span class="period">.</span></h2>
+    <div class="green-line"></div>
+    <p class="subtitle">Alcove Tech has already built key MOF infrastructure. The strategy is to drive high-intent traffic to these assets and capture leads into HubSpot for nurture.</p>
+
+    <div class="card-grid" style="margin-top: 36px;">
+      <div class="card">
+        <div class="card-icon">
+          <span class="icon-inline" style="color: var(--green);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3"/><path d="M15 1v3"/><path d="M9 20v3"/><path d="M15 20v3"/><path d="M20 9h3"/><path d="M20 14h3"/><path d="M1 9h3"/><path d="M1 14h3"/></svg>
+          </span>
+        </div>
+        <h3>RSU Borrowing Calculator</h3>
+        <p>Already live on rsulending.com.au. The primary conversion tool &mdash; tech professionals enter their income details and see exactly how much more they could borrow with the right broker.</p>
+        <p style="margin-top: 12px; font-size: 0.82rem; color: var(--green); font-weight: 600;">Primary CTA for all paid campaigns</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <span class="icon-inline" style="color: var(--green);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </span>
+        </div>
+        <h3>Downloadable Guides</h3>
+        <p>"The Tech Professional's Guide to Getting a Home Loan in Australia" &mdash; gated PDF capturing email, employer, and income bracket. Feeds directly into HubSpot for segmented nurture.</p>
+        <p style="margin-top: 12px; font-size: 0.82rem; color: var(--green); font-weight: 600;">Lead magnet for guide-hungry tech audience</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <span class="icon-inline" style="color: var(--green);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </span>
+        </div>
+        <h3>HubSpot Email Nurture</h3>
+        <p>Automated sequences triggered by calculator usage, guide downloads, and webinar registrations. Personalised by employer type and borrowing stage &mdash; leveraging Alcove's existing HubSpot setup.</p>
+        <p style="margin-top: 12px; font-size: 0.82rem; color: var(--green); font-weight: 600;">5-touch nurture sequence to strategy call</p>
+      </div>
+    </div>
+
+    <div class="wireframe" style="margin-top: 32px;">
+      <h3>Lead Capture &rarr; Nurture &rarr; Conversion Flow</h3>
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 16px;">
+        <div class="wireframe-section" style="text-align: center;"><strong>Ad Click</strong><br>LinkedIn / Meta / YouTube</div>
+        <div class="wireframe-section" style="text-align: center;"><strong>Calculator / Guide</strong><br>Lead captured in HubSpot</div>
+        <div class="wireframe-section" style="text-align: center;"><strong>Email 1&ndash;3</strong><br>Education + social proof</div>
+        <div class="wireframe-section" style="text-align: center;"><strong>Retargeting</strong><br>Testimonial ads + CTA</div>
+        <div class="wireframe-section" style="text-align: center; background: var(--green); color: white; border-color: var(--green);"><strong>Strategy Call</strong><br>Booked with Alex</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 9 — PROJECTED FUNNEL METRICS
+     ============================================================ -->
+<section class="slide" id="slide-9">
+  <div class="slide-inner">
+    <h4>Projected Performance</h4>
+    <h2>Funnel Metrics by Platform<span class="period">.</span></h2>
+    <div class="green-line"></div>
+    <p class="subtitle">Estimated performance benchmarks based on financial services industry data and Covert's experience running paid social campaigns for professional services brands.</p>
+
+    <div class="table-wrap" style="margin-top: 32px;">
+      <table class="green-header">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>LinkedIn</th>
+            <th>Meta</th>
+            <th>YouTube</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CPM (Cost per 1,000 impressions)</strong></td>
+            <td>$35&ndash;$55</td>
+            <td>$8&ndash;$15</td>
+            <td>$12&ndash;$20</td>
+          </tr>
+          <tr>
+            <td><strong>CTR (Click-through rate)</strong></td>
+            <td>0.35&ndash;0.55%</td>
+            <td>0.8&ndash;1.5%</td>
+            <td>0.4&ndash;0.8%</td>
+          </tr>
+          <tr>
+            <td><strong>CPC (Cost per click)</strong></td>
+            <td>$7&ndash;$14</td>
+            <td>$1.50&ndash;$4</td>
+            <td>$2&ndash;$5</td>
+          </tr>
+          <tr>
+            <td><strong>Landing Page Conversion Rate</strong></td>
+            <td>8&ndash;15%</td>
+            <td>5&ndash;10%</td>
+            <td>4&ndash;8%</td>
+          </tr>
+          <tr>
+            <td><strong>Est. Cost per Lead (Calculator / Guide)</strong></td>
+            <td>$50&ndash;$120</td>
+            <td>$25&ndash;$60</td>
+            <td>$35&ndash;$80</td>
+          </tr>
+          <tr>
+            <td><strong>Est. Cost per Strategy Call Booked</strong></td>
+            <td>$200&ndash;$450</td>
+            <td>$120&ndash;$280</td>
+            <td>$150&ndash;$350</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="two-col" style="margin-top: 32px;">
+      <div class="card" style="background: var(--green-pale); border: 2px solid var(--green);">
+        <h3 style="font-size: 1rem;">The Unit Economics</h3>
+        <p style="font-size: 0.85rem; margin-bottom: 16px;">With an average loan size of $800K&ndash;$1.5M for this audience, even conservative conversion rates deliver exceptional ROI.</p>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+          <div>
+            <div class="stat-val" style="font-size: 2rem;">$250</div>
+            <div class="stat-label">Avg Cost per<br>Strategy Call</div>
+          </div>
+          <div>
+            <div class="stat-val" style="font-size: 2rem;">25%</div>
+            <div class="stat-label">Est. Call-to-Client<br>Conversion</div>
+          </div>
+          <div>
+            <div class="stat-val stat-val-navy" style="font-size: 2rem;">$1,000</div>
+            <div class="stat-label">Est. Cost per<br>New Client</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="insight">
+          <p><strong>LinkedIn will deliver higher quality leads at a higher cost.</strong> The precision targeting means every lead is a verified tech professional at a target employer. Meta delivers volume at lower CPLs. YouTube builds brand authority that improves conversion across all channels. The three platforms work together &mdash; not in isolation.</p>
+        </div>
+        <div class="insight" style="margin-top: 16px;">
+          <p><strong>Key assumption:</strong> These estimates are conservative starting points. Real performance data from the first 60&ndash;90 days will inform optimisation and budget allocation between platforms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 10 — SECTION 2 DIVIDER: SEO
+     ============================================================ -->
+<section class="slide slide-navy section-divider" id="slide-10">
+  <div class="slide-inner">
+    <div class="section-number">02</div>
+    <div>
+      <h2>SEO &amp; Digital Presence<span style="color: rgba(255,255,255,0.3);">.</span></h2>
+      <p>Fixing the foundations, building content authority, and ensuring Alcove is discoverable wherever borrowers are searching &mdash; including AI-powered search.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 11 — CURRENT STATE
+     ============================================================ -->
+<section class="slide" id="slide-11">
+  <div class="slide-inner">
+    <h4>Current State</h4>
+    <h2>Where Alcove Stands Today<span class="period">.</span></h2>
+    <div class="green-line"></div>
+    <p class="subtitle">An honest assessment of alcove.com.au's current organic search performance. The brand has exceptional credentials &mdash; but the website isn't reflecting that strength to Google or AI search engines.</p>
+
+    <div class="card-grid-2" style="margin-top: 36px;">
+      <div class="card" style="border-left: 4px solid #C07A2A;">
+        <div class="card-icon">
+          <span class="icon-inline" style="color: #C07A2A;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </span>
+        </div>
+        <h3>Slow Mobile Page Speed</h3>
+        <p>Google penalises slow-loading sites in both rankings and user experience. Mobile performance is a Core Web Vitals ranking factor &mdash; and Alcove's current mobile speed is holding back organic visibility.</p>
+      </div>
+      <div class="card" style="border-left: 4px solid #C07A2A;">
+        <div class="card-icon">
+          <span class="icon-inline" style="color: #C07A2A;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          </span>
+        </div>
+        <h3>Poor Keyword Visibility</h3>
+        <p>Alcove isn't ranking for the high-intent keywords that borrowers search when looking for a broker. Terms like "mortgage broker Sydney", "best mortgage broker", and "property investment advisor" are currently uncaptured.</p>
+      </div>
+      <div class="card" style="border-left: 4px solid #C07A2A;">
+        <div class="card-icon">
+          <span class="icon-inline" style="color: #C07A2A;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          </span>
+        </div>
+        <h3>Brand Term Competition</h3>
+        <p>Alcove isn't ranking prominently for its own brand name. When someone searches "Alcove mortgage broker" or simply "Alcove", the site should own position 1 &mdash; with sitelinks, knowledge panel, and full SERP presence.</p>
+      </div>
+      <div class="card" style="border-left: 4px solid #C07A2A;">
+        <div class="card-icon">
+          <span class="icon-inline" style="color: #C07A2A;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="9" y1="10" x2="15" y2="10"/></svg>
+          </span>
+        </div>
+        <h3>Zero AI Citations</h3>
+        <p>ChatGPT, Perplexity, and Google AI Overviews are increasingly where borrowers start their research. Alcove currently has zero presence in AI-generated answers &mdash; a gap that will only widen if unaddressed.</p>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top: 28px;">
+      <p><strong>The disconnect is stark.</strong> Alcove is Australia's #1 ranked broker with $3B+ in settled loans, 99% approval rate, and a team of 30+. Chris Bates co-hosts one of Australia's most popular property podcasts. But none of this authority is translating into organic search visibility. The opportunity cost is significant &mdash; and fixable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 12 — SPEED & TECHNICAL
+     ============================================================ -->
+<section class="slide slide-alt" id="slide-12">
+  <div class="slide-inner">
+    <h4>Technical SEO</h4>
+    <h2>Speed &amp; Core Web Vitals<span class="period">.</span></h2>
+    <div class="green-line"></div>
+    <p class="subtitle">Page speed is the foundation. Until mobile performance is fixed, every other SEO investment delivers diminished returns. This is the first priority.</p>
+
+    <div class="two-col" style="margin-top: 40px;">
+      <div>
+        <h3 style="margin-bottom: 20px;">Priority Technical Fixes</h3>
+        <div class="card" style="margin-bottom: 16px; border-left: 4px solid var(--green);">
+          <h3 style="font-size: 0.95rem;">1. Image Optimisation</h3>
+          <p style="font-size: 0.85rem;">Convert images to WebP/AVIF, implement lazy loading, serve responsive sizes. Often the single biggest speed improvement.</p>
+        </div>
+        <div class="card" style="margin-bottom: 16px; border-left: 4px solid var(--green);">
+          <h3 style="font-size: 0.95rem;">2. JavaScript &amp; CSS Audit</h3>
+          <p style="font-size: 0.85rem;">Identify and defer render-blocking resources. Remove unused scripts and stylesheets. Minimise third-party script impact.</p>
+        </div>
+        <div class="card" style="margin-bottom: 16px; border-left: 4px solid var(--green);">
+          <h3 style="font-size: 0.95rem;">3. Server &amp; Hosting Review</h3>
+          <p style="font-size: 0.85rem;">Evaluate TTFB (Time to First Byte), implement CDN if not already, enable proper caching headers. Consider edge caching for static pages.</p>
+        </div>
+        <div class="card" style="border-left: 4px solid var(--green);">
+          <h3 style="font-size: 0.95rem;">4. Schema &amp; Structured Data</h3>
+          <p style="font-size: 0.85rem;">Implement Organisation, LocalBusiness, Person (Chris Bates), and Review schema. Enables rich snippets and knowledge panel improvements.</p>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="background: var(--green-pale); border: 2px solid var(--green);">
+          <h3 style="font-size: 1rem;">Core Web Vitals Targets</h3>
+          <p style="font-size: 0.85rem; margin-bottom: 20px;">Google's three key performance metrics that directly impact rankings:</p>
+          <div style="margin-bottom: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+              <strong style="font-size: 0.85rem; color: var(--navy);">LCP (Largest Contentful Paint)</strong>
+              <span style="font-size: 0.82rem; color: var(--green); font-weight: 600;">Target: &lt;2.5s</span>
+            </div>
+            <p style="font-size: 0.8rem;">How quickly the main content loads. Critical for first impressions.</p>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+              <strong style="font-size: 0.85rem; color: var(--navy);">INP (Interaction to Next Paint)</strong>
+              <span style="font-size: 0.82rem; color: var(--green); font-weight: 600;">Target: &lt;200ms</span>
+            </div>
+            <p style="font-size: 0.8rem;">How responsive the page feels when users interact. Affects form submissions and CTAs.</p>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+              <strong style="font-size: 0.85rem; color: var(--navy);">CLS (Cumulative Layout Shift)</strong>
+              <span style="font-size: 0.82rem; color: var(--green); font-weight: 600;">Target: &lt;0.1</span>
+            </div>
+            <p style="font-size: 0.8rem;">Visual stability &mdash; elements shouldn't shift around as the page loads.</p>
+          </div>
+        </div>
+
+        <div class="insight" style="margin-top: 20px;">
+          <p><strong>Speed is a ranking factor, but it's also a conversion factor.</strong> Every 1-second delay in mobile load time reduces conversions by up to 20%. For a high-value service like mortgage broking, that translates directly to lost enquiries and lost revenue.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 13 — KEYWORD STRATEGY
+     ============================================================ -->
+<section class="slide" id="slide-13">
+  <div class="slide-inner">
+    <h4>Keyword Strategy</h4>
+    <h2>Owning the Search Landscape<span class="period">.</span></h2>
+    <div class="green-line"></div>
+    <p class="subtitle">A keyword strategy built around Alcove's core services, mapped to content pillars that capture borrowers at every stage of their journey.</p>
+
+    <div class="table-wrap" style="margin-top: 32px;">
+      <table class="green-header">
+        <thead>
+          <tr>
+            <th>Content Pillar</th>
+            <th>Target Keywords</th>
+            <th>Search Intent</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Mortgage Broking</strong></td>
+            <td>mortgage broker Sydney, best mortgage broker Australia, mortgage broker near me</td>
+            <td>High intent &mdash; ready to engage</td>
+            <td><span class="change-up">High</span></td>
+          </tr>
+          <tr>
+            <td><strong>First Home Buyers</strong></td>
+            <td>first home buyer broker, first home buyer guide, how much can I borrow first home</td>
+            <td>Research &amp; decision stage</td>
+            <td><span class="change-up">High</span></td>
+          </tr>
+          <tr>
+            <td><strong>Property Investment</strong></td>
+            <td>property investment advisor, investment property loan, property investment strategy</td>
+            <td>High intent &mdash; experienced buyers</td>
+            <td><span class="change-up">High</span></td>
+          </tr>
+          <tr>
+            <td><strong>Refinancing</strong></td>
+            <td>refinancing broker, should I refinance, refinance home loan Australia</td>
+            <td>Active consideration</td>
+            <td><span style="color: var(--navy); font-weight: 600;">Medium</span></td>
+          </tr>
+          <tr>
+            <td><strong>SMSF Lending</strong></td>
+            <td>SMSF lending, SMSF property loan, buy property through SMSF</td>
+            <td>Specialist &mdash; high value</td>
+            <td><span style="color: var(--navy); font-weight: 600;">Medium</span></td>
+          </tr>
+          <tr>
+            <td><strong>RSU / Tech Lending</strong></td>
+            <td>RSU home loan, tech professional mortgage, stock options borrowing capacity</td>
+            <td>Niche &mdash; low competition, high value</td>
+            <td><span class="change-up">High</span></td>
+          </tr>
+          <tr>
+            <td><strong>High Net Worth</strong></td>
+            <td>private mortgage broker, high net worth lending, complex income home loan</td>
+            <td>Specialist &mdash; Alcove Private</td>
+            <td><span style="color: var(--navy); font-weight: 600;">Medium</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="two-col" style="margin-top: 32px;">
+      <div>
+        <h3 style="margin-bottom: 16px;">Quick Win: RSU / Tech Lending</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 12px;">This is the lowest-competition, highest-value keyword cluster. Alcove Tech already has the authority &mdash; rsulending.com.au, Alex's expertise, real client outcomes. A focused SEO push here can deliver page 1 rankings within 3&ndash;6 months.</p>
+        <ul class="check-list">
+          <li>Create dedicated landing pages per keyword cluster</li>
+          <li>Interlink rsulending.com.au and alcove.com.au</li>
+          <li>Blog content: "How RSUs Affect Your Borrowing Capacity"</li>
+          <li>Schema markup for Alex as a recognised expert</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 16px;">Long Game: Mortgage Broker Sydney</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 12px;">High volume, high competition. Winning here requires a 12&ndash;18 month sustained effort combining content, technical SEO, authority building, and local SEO. But the payoff is enormous &mdash; consistent, high-intent organic traffic.</p>
+        <ul class="check-list">
+          <li>Service pages optimised per keyword cluster</li>
+          <li>Supporting blog content targeting long-tail variants</li>
+          <li>Google Business Profile optimisation for local pack</li>
+          <li>Authority building to compete with established players</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 14 — CONTENT LEVERAGE
+     ============================================================ -->
+<section class="slide slide-alt" id="slide-14">
+  <div class="slide-inner">
+    <h4>Content Strategy</h4>
+    <h2>Four Podcasts. Untapped SEO Gold<span class="period">.</span></h2>
+    <div class="green-line"></div>
+    <p class="subtitle">Alcove has a content advantage that most competitors would pay millions for: four active podcasts producing hours of expert-level content every week. None of it is being leveraged for SEO.</p>
+
+    <div class="card-grid-2" style="margin-top: 36px;">
+      <div class="card" style="border-top: 4px solid var(--green);">
+        <h3>Australian Property Podcast</h3>
+        <p>Co-hosted by Chris Bates. Australia's leading property podcast with a loyal audience of investors and homebuyers. Every episode contains insights that could power 3&ndash;5 blog articles.</p>
+        <p style="margin-top: 12px; font-size: 0.82rem; color: var(--green); font-weight: 600;">Highest SEO leverage &mdash; massive topical authority</p>
+      </div>
+      <div class="card" style="border-top: 4px solid var(--green);">
+        <h3>Elephant in the Room</h3>
+        <p>Deep-dive property and finance discussions. Long-form content perfect for comprehensive guides and pillar pages that target high-competition keywords.</p>
+        <p style="margin-top: 12px; font-size: 0.82rem; color: var(--green); font-weight: 600;">Pillar content &mdash; detailed, authoritative guides</p>
+      </div>
+      <div class="card" style="border-top: 4px solid var(--navy);">
+        <h3>Street Secrets</h3>
+        <p>Local market insights and suburb-level analysis. Ideal source material for location-specific SEO content &mdash; "Is [suburb] a good investment?" articles that capture long-tail search traffic.</p>
+        <p style="margin-top: 12px; font-size: 0.82rem; color: var(--navy); font-weight: 600;">Local SEO &mdash; suburb and market content</p>
+      </div>
+      <div class="card" style="border-top: 4px solid var(--navy);">
+        <h3>First Home Unlocked</h3>
+        <p>Specifically targeted at first home buyers &mdash; one of the highest-volume keyword categories in Australian property search. Direct pipeline from podcast listener to blog reader to Alcove client.</p>
+        <p style="margin-top: 12px; font-size: 0.82rem; color: var(--navy); font-weight: 600;">First home buyer funnel &mdash; high volume keywords</p>
+      </div>
+    </div>
+
+    <div class="pipeline" style="margin-top: 32px;">
+      <div class="pipeline-step">
+        <h3>Record</h3>
+        <p>Weekly podcast episodes across 4 shows</p>
+      </div>
+      <div class="pipeline-step">
+        <h3>Transcribe</h3>
+        <p>AI-assisted transcription + key insight extraction</p>
+      </div>
+      <div class="pipeline-step">
+        <h3>Write</h3>
+        <p>SEO-optimised blog articles from episode themes</p>
+      </div>
+      <div class="pipeline-step" style="background: var(--green); color: white; border-right: none;">
+        <h3 style="color: white;">Rank</h3>
+        <p style="color: rgba(255,255,255,0.9);">Target keywords, build internal links, capture traffic</p>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top: 28px;">
+      <p><strong>Conservative estimate: 4 podcasts &times; 4 episodes/month = 16 episodes. Each episode yields 2&ndash;3 blog articles = 32&ndash;48 SEO-optimised articles per month.</strong> This volume of expert content, properly optimised, creates an organic growth flywheel that compounds over time. Most competitors are producing 2&ndash;4 articles per month.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 15 — AEO / AI OVERVIEWS
+     ============================================================ -->
+<section class="slide" id="slide-15">
+  <div class="slide-inner">
+    <h4>AI Search Optimisation</h4>
+    <h2>AEO &amp; AI Overviews<span class="period">.</span></h2>
+    <div class="green-line"></div>
+    <p class="subtitle">The search landscape is shifting. ChatGPT, Google AI Overviews, and Perplexity are becoming the first point of research for a growing segment of borrowers. Alcove needs to be cited in these answers.</p>
+
+    <div class="two-col" style="margin-top: 40px;">
+      <div>
+        <h3 style="margin-bottom: 20px;">Why AEO Matters Now</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 20px;">AI-powered search is no longer experimental. Google AI Overviews appear for ~30% of queries. ChatGPT and Perplexity are used daily by the exact tech-savvy demographic Alcove serves. When someone asks "Who is the best mortgage broker in Sydney?", Alcove should be in that answer.</p>
+
+        <div class="card" style="border-left: 4px solid var(--navy); margin-bottom: 16px;">
+          <p><strong>Current state:</strong> Zero AI citations. Alcove is not mentioned in ChatGPT, Perplexity, or Google AI Overviews for any relevant mortgage broker query.</p>
+        </div>
+        <div class="card" style="border-left: 4px solid var(--green);">
+          <p><strong>Target state:</strong> Alcove cited as a recommended broker for Sydney, tech professionals, property investment, and high-net-worth lending across all major AI platforms.</p>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 20px;">How We Get There</h3>
+        <ul class="check-list">
+          <li><strong>Structured data &mdash;</strong> Organisation, Person, and FAQ schema that AI models can parse and cite</li>
+          <li><strong>Authoritative content &mdash;</strong> Comprehensive, factual articles that AI models use as source material</li>
+          <li><strong>Entity building &mdash;</strong> Chris Bates and Alcove as recognised entities across the web (Wikipedia, Wikidata, industry profiles)</li>
+          <li><strong>Third-party mentions &mdash;</strong> Getting Alcove cited on high-authority finance sites, directories, and publications that AI models train on</li>
+          <li><strong>Q&amp;A format content &mdash;</strong> Blog posts structured as direct answers to common borrower questions (optimised for AI extraction)</li>
+          <li><strong>Awards &amp; credentials markup &mdash;</strong> #1 ranked broker, $3B+ settled, 99% approval rate &mdash; structured for AI consumption</li>
+        </ul>
+
+        <div class="insight" style="margin-top: 20px;">
+          <p><strong>Early mover advantage.</strong> Most brokers haven't started AEO. The firms that build AI-friendly content and entity presence now will dominate AI search results for years &mdash; just like those who invested in SEO early dominated traditional search.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 16 — AUTHORITY BUILDING
+     ============================================================ -->
+<section class="slide slide-alt" id="slide-16">
+  <div class="slide-inner">
+    <h4>Authority Building</h4>
+    <h2>Link Building &amp; Domain Authority<span class="period">.</span></h2>
+    <div class="green-line"></div>
+    <p class="subtitle">Content alone isn't enough. Authority signals &mdash; backlinks from trusted sites, directory listings, and brand mentions &mdash; are what tell Google (and AI models) that Alcove is a credible source worth ranking and citing.</p>
+
+    <div class="card-grid" style="margin-top: 36px;">
+      <div class="card">
+        <div class="card-icon">
+          <span class="icon-inline" style="color: var(--green);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </span>
+        </div>
+        <h3>Financial Directories</h3>
+        <p>Submissions to finance-specific directories, broker comparison platforms (Finder, Canstar, RateCity), and industry body listings (MFAA, FBAA). High relevance, high trust signals from the domains that matter most.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <span class="icon-inline" style="color: var(--green);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><line x1="12" y1="8" x2="5" y2="16"/><line x1="12" y1="8" x2="19" y2="16"/><line x1="5" y1="19" x2="19" y2="19"/></svg>
+          </span>
+        </div>
+        <h3>Podcast &amp; Media Backlinks</h3>
+        <p>Chris Bates appears on major finance podcasts and media. Each appearance is a backlink opportunity from high-authority domains. We'll systematically build and maintain these links as they're published.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <span class="icon-inline" style="color: var(--green);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </span>
+        </div>
+        <h3>Icaros Authority Network</h3>
+        <p>Our proprietary SEO platform, <strong>Icaros</strong>, powers an owned media network that delivers contextual, authoritative links from relevant finance and property publications. We own the infrastructure &mdash; no third-party dependency.</p>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top: 32px;">
+      <div>
+        <h3 style="margin-bottom: 16px;">Local SEO &mdash; Google Business Profile</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 12px;">When someone searches "mortgage broker near me" or "mortgage broker Sydney", the Google Maps 3-pack appears above organic results. Alcove needs to own this space.</p>
+        <ul class="check-list">
+          <li>Optimise Google Business Profile with complete service information</li>
+          <li>Implement review generation strategy (leverage 99% approval rate)</li>
+          <li>Add Google Posts with regular content updates</li>
+          <li>Build consistent NAP citations across business directories</li>
+          <li>Local landing pages for key service areas</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 16px;">Awards &amp; PR Leverage</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 12px;">Alcove's award profile is a significant untapped SEO asset. Each award is a backlink opportunity and a trust signal for both Google and AI models.</p>
+        <ul class="check-list">
+          <li>2025 NSW/ACT Champion (AFG)</li>
+          <li>2024 #1 Elite Broker (The Adviser)</li>
+          <li>2024 #3 Top 100 (MPA)</li>
+          <li>MFAA Excellence Award</li>
+          <li>Ensure all award pages link back to alcove.com.au</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top: 28px;">
+      <p><strong>Alcove's existing authority &mdash; awards, podcast presence, media mentions, client base &mdash; is a goldmine for link building.</strong> Most of these backlink opportunities already exist but aren't being captured. A systematic approach to claiming and building these links will compound domain authority over 6&ndash;12 months.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 17 — SECTION 3 DIVIDER: INVESTMENT
+     ============================================================ -->
+<section class="slide slide-green section-divider" id="slide-17">
+  <div class="slide-inner">
+    <div class="section-number">03</div>
+    <div>
+      <h2>Investment &amp; Next Steps<span style="color: rgba(255,255,255,0.3);">.</span></h2>
+      <p>What the engagement looks like, what it costs, and how we get started.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 18 — PAID SOCIAL PRICING
+     ============================================================ -->
+<section class="slide" id="slide-18">
+  <div class="slide-inner">
+    <h4>Paid Social Investment</h4>
+    <h2>Lead Generation Retainer<span class="period">.</span></h2>
+    <div class="green-line"></div>
+    <p class="subtitle">A monthly retainer covering strategy, creative production, campaign management, and ongoing optimisation across LinkedIn, Meta, and YouTube.</p>
+
+    <div class="two-col" style="margin-top: 40px;">
+      <div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Included</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Campaign Strategy &amp; Planning</strong></td>
+                <td>Funnel design, audience research, platform strategy, monthly planning</td>
+              </tr>
+              <tr>
+                <td><strong>Creative Production</strong></td>
+                <td>Video editing, ad creative, copy, carousel design, landing page optimisation</td>
+              </tr>
+              <tr>
+                <td><strong>Campaign Management</strong></td>
+                <td>Daily monitoring, bid optimisation, A/B testing, audience refinement</td>
+              </tr>
+              <tr>
+                <td><strong>HubSpot Integration</strong></td>
+                <td>Lead routing, nurture sequence setup, CRM integration, reporting</td>
+              </tr>
+              <tr>
+                <td><strong>Reporting &amp; Analysis</strong></td>
+                <td>Monthly performance report, funnel analysis, strategy recommendations</td>
+              </tr>
+              <tr>
+                <td><strong>Video Shoot Coordination</strong></td>
+                <td>Monthly content day planning with Alex, shot lists, post-production</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="background: var(--green-pale); border: 2px solid var(--green); text-align: center; padding: 48px 36px;">
+          <h4 style="color: var(--green);">Monthly Retainer</h4>
+          <div class="stat-val" style="font-size: 3rem; margin: 12px 0;">Custom</div>
+          <p style="font-size: 0.85rem; color: var(--grey); margin-bottom: 20px;">Plus ad spend (recommended minimum discussed separately)</p>
+          <div class="green-line" style="margin: 20px auto;"></div>
+          <ul class="check-list" style="text-align: left;">
+            <li>3 platforms: LinkedIn, Meta, YouTube</li>
+            <li>Full creative production included</li>
+            <li>Monthly video shoot coordination</li>
+            <li>HubSpot integration &amp; nurture setup</li>
+            <li>Dedicated account manager</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top: 28px;">
+      <p><strong>Recommended minimum engagement: 3 months.</strong> Paid social campaigns need 60&ndash;90 days to gather sufficient data for optimisation. The first month establishes baselines, the second month optimises, and the third month delivers scaled performance. Results compound from there.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 19 — SEO PRICING
+     ============================================================ -->
+<section class="slide slide-alt" id="slide-19">
+  <div class="slide-inner">
+    <h4>SEO Investment</h4>
+    <h2>SEO &amp; Digital Presence Retainer<span class="period">.</span></h2>
+    <div class="green-line"></div>
+    <p class="subtitle">A monthly retainer covering technical SEO, content strategy, authority building, AEO, and local SEO &mdash; designed to systematically grow Alcove's organic visibility.</p>
+
+    <div class="two-col" style="margin-top: 40px;">
+      <div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Included</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Technical SEO</strong></td>
+                <td>Page speed optimisation, Core Web Vitals, schema markup, crawl health monitoring</td>
+              </tr>
+              <tr>
+                <td><strong>Content Strategy &amp; Production</strong></td>
+                <td>Keyword research, content calendar, blog articles from podcast content, on-page optimisation</td>
+              </tr>
+              <tr>
+                <td><strong>Authority Building</strong></td>
+                <td>Link building via Icaros, directory submissions, podcast backlink capture, PR outreach</td>
+              </tr>
+              <tr>
+                <td><strong>AEO / AI Optimisation</strong></td>
+                <td>Entity building, structured data, AI citation monitoring, Q&amp;A content optimisation</td>
+              </tr>
+              <tr>
+                <td><strong>Local SEO</strong></td>
+                <td>Google Business Profile, review strategy, local citations, area landing pages</td>
+              </tr>
+              <tr>
+                <td><strong>Reporting</strong></td>
+                <td>Monthly ranking reports, traffic analysis, competitor tracking, AI citation audits</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="background: var(--green-pale); border: 2px solid var(--green); text-align: center; padding: 48px 36px;">
+          <h4 style="color: var(--green);">Monthly Retainer</h4>
+          <div class="stat-val" style="font-size: 3rem; margin: 12px 0;">Custom</div>
+          <p style="font-size: 0.85rem; color: var(--grey); margin-bottom: 20px;">Ongoing engagement &mdash; SEO compounds over time</p>
+          <div class="green-line" style="margin: 20px auto;"></div>
+          <ul class="check-list" style="text-align: left;">
+            <li>Technical SEO audit &amp; fixes (Month 1 priority)</li>
+            <li>8&ndash;12 SEO articles per month from podcast content</li>
+            <li>Ongoing authority building via Icaros</li>
+            <li>AEO strategy &amp; AI citation monitoring</li>
+            <li>Google Business Profile optimisation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top: 28px;">
+      <p><strong>SEO is a compounding investment.</strong> Month 1 focuses on technical fixes (the foundation). Months 2&ndash;3 build the content engine. Months 4&ndash;6 show early ranking movements. Months 6&ndash;12 deliver meaningful organic traffic growth. The podcast content pipeline gives Alcove an unfair advantage in content velocity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 20 — COMBINED PACKAGE
+     ============================================================ -->
+<section class="slide" id="slide-20">
+  <div class="slide-inner">
+    <h4>Combined Package</h4>
+    <h2>Paid Social + SEO Bundle<span class="period">.</span></h2>
+    <div class="green-line"></div>
+    <p class="subtitle">The most effective approach combines both channels. Paid social delivers immediate leads while SEO builds a compounding organic pipeline. Together, they create a growth engine that gets stronger every month.</p>
+
+    <div class="card-grid" style="margin-top: 40px;">
+      <div class="card" style="text-align: center; padding: 40px 28px;">
+        <h4 style="color: var(--green);">Paid Social Only</h4>
+        <div class="stat-val" style="font-size: 2.2rem; margin: 12px 0;">Custom</div>
+        <div class="stat-label">Per Month + Ad Spend</div>
+        <div class="green-line" style="margin: 20px auto;"></div>
+        <ul class="check-list" style="text-align: left; margin-top: 16px;">
+          <li>LinkedIn + Meta + YouTube</li>
+          <li>Full creative production</li>
+          <li>HubSpot integration</li>
+          <li>Monthly video shoots</li>
+        </ul>
+        <p style="font-size: 0.82rem; color: var(--grey-light); margin-top: 20px;">Best for: Immediate lead flow</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 40px 28px;">
+        <h4 style="color: var(--green);">SEO Only</h4>
+        <div class="stat-val" style="font-size: 2.2rem; margin: 12px 0;">Custom</div>
+        <div class="stat-label">Per Month</div>
+        <div class="green-line" style="margin: 20px auto;"></div>
+        <ul class="check-list" style="text-align: left; margin-top: 16px;">
+          <li>Technical SEO + speed fixes</li>
+          <li>Content from podcast pipeline</li>
+          <li>Authority building + Icaros</li>
+          <li>AEO + local SEO</li>
+        </ul>
+        <p style="font-size: 0.82rem; color: var(--grey-light); margin-top: 20px;">Best for: Long-term organic growth</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 40px 28px; border: 2px solid var(--green); background: var(--green-pale);">
+        <h4 style="color: var(--green);">Combined Package</h4>
+        <div class="stat-val" style="font-size: 2.2rem; margin: 12px 0;">Custom</div>
+        <div class="stat-label">Per Month + Ad Spend</div>
+        <div class="green-line" style="margin: 20px auto;"></div>
+        <ul class="check-list" style="text-align: left; margin-top: 16px;">
+          <li>Everything in Paid Social</li>
+          <li>Everything in SEO</li>
+          <li>Cross-channel synergies</li>
+          <li>Unified reporting &amp; strategy</li>
+        </ul>
+        <p style="font-size: 0.82rem; color: var(--green); font-weight: 600; margin-top: 20px;">Recommended &mdash; maximum impact</p>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top: 32px;">
+      <p><strong>Why the combined package delivers more than the sum of its parts:</strong> Paid social data informs SEO keyword strategy. SEO content feeds paid creative. Retargeting audiences grow from organic traffic. Blog articles become ad landing pages. The two channels create a compounding flywheel where each makes the other more effective.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 21 — RECOMMENDED NEXT STEPS
+     ============================================================ -->
+<section class="slide slide-alt" id="slide-21">
+  <div class="slide-inner">
+    <h4>Next Steps</h4>
+    <h2>Getting Started<span class="period">.</span></h2>
+    <div class="green-line"></div>
+    <p class="subtitle">A clear path from proposal to first results. Here's what happens next.</p>
+
+    <div class="steps" style="margin-top: 48px;">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Strategy Session</h3>
+        <p>90-minute deep dive with the Alcove team. Align on goals, audiences, budget allocation, and content approach. Review Alex's availability for video production.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Technical Audit</h3>
+        <p>Comprehensive audit of alcove.com.au: page speed, technical SEO health, keyword gaps, competitor analysis, and AI citation baseline. Delivered within 2 weeks.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Campaign Launch</h3>
+        <p>Paid social campaigns live within 3&ndash;4 weeks of kickoff. First video shoot with Alex. SEO technical fixes begin immediately. Content calendar established.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Optimise &amp; Scale</h3>
+        <p>60&ndash;90 day performance review. Reallocate budget to highest-performing channels and audiences. Scale what's working. Report on leads, cost per lead, and pipeline impact.</p>
+      </div>
+    </div>
+
+    <div class="timeline" style="margin-top: 40px;">
+      <div class="tl-item tl-item-active">
+        <div class="tl-month">Month 1</div>
+        <h3>Foundation</h3>
+        <ul>
+          <li>Strategy session &amp; onboarding</li>
+          <li>Technical SEO audit &amp; speed fixes</li>
+          <li>First video shoot with Alex</li>
+          <li>Campaign setup &amp; launch</li>
+          <li>HubSpot integration</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-month">Month 2&ndash;3</div>
+        <h3>Build &amp; Learn</h3>
+        <ul>
+          <li>Campaigns optimising with real data</li>
+          <li>Content engine producing from podcasts</li>
+          <li>Authority building underway</li>
+          <li>First leads flowing through funnel</li>
+          <li>A/B testing creative &amp; audiences</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-month">Month 4&ndash;6</div>
+        <h3>Accelerate</h3>
+        <ul>
+          <li>Budget scaled to top-performing channels</li>
+          <li>Early SEO ranking movements</li>
+          <li>Retargeting pools matured</li>
+          <li>AI citation improvements measured</li>
+          <li>Cost per lead optimised</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-month">Month 7&ndash;12</div>
+        <h3>Compound</h3>
+        <ul>
+          <li>Organic traffic growing month-on-month</li>
+          <li>Paid social delivering consistent lead flow</li>
+          <li>Alcove cited in AI search results</li>
+          <li>Full funnel data driving strategy</li>
+          <li>ROI clearly demonstrated</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 22 — CLOSE
+     ============================================================ -->
+<section class="slide closing" id="slide-22">
+  <div class="slide-inner" style="text-align: center;">
+    <div style="margin-bottom: 48px;">
+      <span class="icon-hero" style="color: var(--green);">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </span>
+    </div>
+    <h2>Let's Build Alcove's Digital Growth Engine<span class="period">.</span></h2>
+    <div class="green-line" style="margin: 20px auto;"></div>
+    <p class="subtitle" style="margin: 0 auto 48px; text-align: center; max-width: 640px;">Australia's #1 broker deserves a digital presence that matches. From paid social lead generation to organic search dominance &mdash; we're ready to make it happen.</p>
+
+    <div class="contact-row">
+      <div class="contact-item">
+        <h4>Contact</h4>
+        <p>Peter Nay</p>
+        <p style="font-size: 0.85rem; color: var(--grey);">peter@covert.com.au</p>
+      </div>
+      <div class="contact-item">
+        <h4>Contact</h4>
+        <p>Nathan Cooke</p>
+        <p style="font-size: 0.85rem; color: var(--grey);">nathan@covert.com.au</p>
+      </div>
+      <div class="contact-item">
+        <h4>Date</h4>
+        <p>March 2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
