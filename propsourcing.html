@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Covert Digital × Propsourcing — April 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* PASSWORD GATE */
+#password-gate {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, var(--navy) 0%, #252540 100%);
+  display: flex; align-items: center; justify-content: center; flex-direction: column;
+  z-index: 9999;
+}
+#password-gate .gate-logo {
+  font-family: 'Apercu', 'Poppins', sans-serif;
+  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.3em;
+  color: var(--green); font-weight: 700; margin-bottom: 48px;
+}
+#password-gate .gate-box {
+  background: rgba(255,255,255,0.06); border-radius: var(--radius);
+  padding: 48px 56px; text-align: center; backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+#password-gate h2 {
+  color: white; font-size: 1.4rem; margin-bottom: 8px;
+  font-family: 'Apercu', 'Poppins', sans-serif;
+}
+#password-gate .gate-sub {
+  color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-bottom: 32px;
+}
+#password-gate input {
+  width: 100%; padding: 14px 20px; border: 2px solid rgba(255,255,255,0.15);
+  border-radius: 10px; background: rgba(255,255,255,0.06); color: white;
+  font-family: 'Poppins', sans-serif; font-size: 0.95rem; text-align: center;
+  outline: none; transition: border-color 0.3s;
+}
+#password-gate input::placeholder { color: rgba(255,255,255,0.3); }
+#password-gate input:focus { border-color: var(--green); }
+#password-gate .gate-error {
+  color: #e74c3c; font-size: 0.8rem; margin-top: 12px; opacity: 0; transition: opacity 0.3s;
+}
+#password-gate .gate-error.show { opacity: 1; }
+#deck-content { display: none; }
+
+/* === COVERT BASE CSS === */
+@font-face { font-family: 'Apercu'; src: url('https://www.covert.com.au/wp-content/themes/lf-covert/assets/fonts/Apercu-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'Apercu'; src: url('https://www.covert.com.au/wp-content/themes/lf-covert/assets/fonts/Apercu-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; }
+@font-face { font-family: 'Apercu'; src: url('https://www.covert.com.au/wp-content/themes/lf-covert/assets/fonts/Apercu-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; }
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #33334C;
+  --green: #3E936C;
+  --dark-green: #017F4E;
+  --green-pale: #EAF5F0;
+  --grey: #43464E;
+  --grey-light: #9E9E9E;
+  --bg: #FFFFFF;
+  --bg-alt: #F8F5F7;
+  --dark: #222222;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 6px 20px rgba(0,0,0,0.07), 0 2px 6px rgba(0,0,0,0.04);
+  --shadow-lg: 0 12px 36px rgba(0,0,0,0.09), 0 4px 12px rgba(0,0,0,0.05);
+  --radius: 16px;
+  --radius-sm: 12px;
+}
+html { font-size: 16px; scroll-behavior: smooth; }
+body { font-family: 'Poppins', sans-serif; color: var(--grey); background: var(--bg); -webkit-font-smoothing: antialiased; line-height: 1.65; }
+
+/* SLIDE SYSTEM */
+.slide { width: 100%; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 80px; position: relative; }
+.slide-inner { max-width: 1160px; width: 100%; }
+.slide-alt { background: var(--bg-alt); }
+.slide-green { background: var(--green); color: white; }
+.slide-navy { background: var(--navy); color: white; }
+
+/* TYPE */
+h1, h2, h3 { font-family: 'Apercu', 'Poppins', sans-serif; }
+h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.08; color: var(--navy); letter-spacing: -0.02em; }
+h2 { font-size: 2.7rem; font-weight: 700; line-height: 1.12; color: var(--navy); letter-spacing: -0.015em; margin-bottom: 6px; }
+h3 { font-size: 1.3rem; font-weight: 600; color: var(--navy); line-height: 1.35; }
+h4 { font-family: 'Poppins', sans-serif; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--green); margin-bottom: 14px; }
+p { line-height: 1.7; font-family: 'Poppins', sans-serif; }
+.period { color: var(--green); }
+.green { color: var(--green); }
+.green-line { width: 54px; height: 3px; background: var(--green); margin: 20px 0; border-radius: 2px; }
+.subtitle { font-size: 1.08rem; color: var(--grey); line-height: 1.75; max-width: 700px; }
+.dim { color: var(--grey-light); }
+
+/* COVER */
+.cover { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
+.cover-left { padding: 80px 80px 80px 100px; display: flex; flex-direction: column; justify-content: center; background: var(--bg); }
+.cover-right { background: linear-gradient(135deg, var(--green) 0%, var(--dark-green) 100%); display: flex; align-items: center; justify-content: center; padding: 60px; }
+.cover-right-inner { text-align: center; color: white; }
+.cover-right-inner .big-stat { font-family: 'Apercu', 'Poppins', sans-serif; font-size: 6rem; font-weight: 700; line-height: 1; letter-spacing: -0.03em; text-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+.cover-right-inner .stat-label { font-size: 1.05rem; font-weight: 400; opacity: 0.85; margin-top: 18px; line-height: 1.55; }
+.cover-logo { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--green); font-weight: 700; margin-bottom: 40px; }
+.cover h1 { margin-bottom: 16px; }
+.cover-sub { font-size: 1.15rem; color: var(--grey); margin-bottom: 48px; font-weight: 300; letter-spacing: 0.01em; }
+.cover-meta { display: flex; gap: 40px; }
+.cover-meta-item span:first-child { display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey-light); font-weight: 600; margin-bottom: 4px; }
+.cover-meta-item span:last-child { font-size: 0.9rem; color: var(--dark); font-weight: 500; }
+
+/* SECTION DIVIDER */
+.section-divider { text-align: left; overflow: hidden; }
+.section-divider::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  pointer-events: none;
+}
+.section-divider::after {
+  content: '';
+  position: absolute;
+  bottom: -25%;
+  left: -8%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.035);
+  pointer-events: none;
+}
+.section-divider .slide-inner { display: flex; align-items: center; gap: 72px; position: relative; z-index: 1; }
+.section-number { font-family: 'Apercu', 'Poppins', sans-serif; font-size: 14rem; font-weight: 700; opacity: 0.12; color: white; line-height: 1; min-width: 200px; letter-spacing: -0.04em; }
+.section-divider h2 { color: white; font-size: 3.6rem; letter-spacing: -0.02em; margin-bottom: 0; }
+.section-divider p { color: rgba(255,255,255,0.85); font-size: 1.15rem; max-width: 580px; margin-top: 22px; line-height: 1.8; }
+.slide-green.section-divider { background: linear-gradient(135deg, var(--green) 0%, var(--dark-green) 100%); }
+.slide-navy.section-divider { background: linear-gradient(135deg, var(--navy) 0%, #252540 100%); }
+
+/* CARDS */
+.card { background: white; border-radius: var(--radius); padding: 36px; box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.05); transition: box-shadow 0.3s ease, transform 0.3s ease; }
+.card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 40px; }
+.card-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; margin-top: 40px; }
+.card-grid-4 > * { min-width: 0; }
+.card-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 40px; }
+.card h3 { margin-bottom: 14px; }
+.card p { color: var(--grey); font-size: 0.9rem; line-height: 1.7; }
+.card .card-icon { font-size: 2.6rem; margin-bottom: 18px; display: block; }
+
+/* STATS */
+.stat-row { display: flex; gap: 60px; margin: 48px 0; flex-wrap: wrap; }
+.stat-val { font-family: 'Apercu', 'Poppins', sans-serif; font-size: 3.8rem; font-weight: 700; color: var(--green); line-height: 1.05; letter-spacing: -0.025em; }
+.stat-val-lg { font-size: 5.5rem; letter-spacing: -0.03em; }
+.stat-val-navy { color: var(--navy); }
+.stat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--grey); margin-top: 12px; font-weight: 600; line-height: 1.4; }
+.stat-sub { font-size: 0.8rem; color: var(--grey-light); margin-top: 4px; }
+
+/* INSIGHT BOX */
+.insight { background: var(--green-pale); border-left: 4px solid var(--green); padding: 30px 34px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 36px 0; }
+.insight p { color: var(--grey); font-size: 0.9rem; line-height: 1.75; }
+.insight strong { color: var(--dark); }
+.insight-navy { background: #EEEEF3; border-left-color: var(--navy); }
+
+/* TWO COL */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+
+/* TABLE */
+table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.82rem; table-layout: auto; }
+th { background: var(--navy); color: #ffffff; padding: 12px 14px; text-align: left; font-weight: 600; white-space: nowrap; font-size: 0.78rem; letter-spacing: 0.02em; }
+th:first-child { border-radius: 10px 0 0 0; }
+th:last-child { border-radius: 0 10px 0 0; }
+td { padding: 11px 14px; border-bottom: 1px solid #e8e8e8; vertical-align: top; word-wrap: break-word; overflow-wrap: break-word; color: var(--grey); }
+td strong { color: var(--dark); }
+tr:nth-child(even) td { background: #f7f7f9; }
+tr:last-child td:first-child { border-radius: 0 0 0 10px; }
+tr:last-child td:last-child { border-radius: 0 0 10px 0; }
+tr:last-child td { border-bottom: none; }
+table.green-header th { background: var(--green); }
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.04); }
+.card, .two-col > div, .card-grid > div, .card-grid-2 > div { overflow-x: auto; min-width: 0; }
+
+/* STEPS */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin: 48px 0; }
+.step { text-align: center; padding: 48px 28px; background: white; border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.05); box-shadow: var(--shadow-sm); transition: box-shadow 0.3s ease, transform 0.3s ease; }
+.step:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.step-num { font-family: 'Apercu', 'Poppins', sans-serif; font-size: 2.8rem; font-weight: 700; color: var(--green); margin-bottom: 18px; }
+.step h3 { font-size: 1.08rem; margin-bottom: 14px; }
+.step p { font-size: 0.85rem; color: var(--grey); line-height: 1.65; }
+
+/* CLOSING */
+.closing { text-align: center; background: var(--bg-alt); }
+.closing h2 { margin-bottom: 18px; }
+.contact-row { display: flex; gap: 72px; justify-content: center; margin-top: 52px; flex-wrap: wrap; }
+.contact-item h4 { margin-bottom: 10px; }
+.contact-item p { font-size: 0.95rem; color: var(--dark); }
+
+/* CHECK LIST */
+.check-list { list-style: none; }
+.check-list li { padding: 8px 0 8px 32px; position: relative; font-size: 0.9rem; color: var(--grey); line-height: 1.6; }
+.check-list li::before { content: '\2713'; position: absolute; left: 0; color: var(--green); font-weight: 700; font-size: 1.05rem; }
+
+/* FLYWHEEL */
+.flywheel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 36px; margin: 44px 0; position: relative; }
+.fw-node { background: white; border: 2px solid var(--green); border-radius: var(--radius); padding: 30px 20px; text-align: center; font-size: 0.84rem; font-weight: 600; color: var(--navy); box-shadow: var(--shadow-sm); transition: box-shadow 0.3s ease, transform 0.3s ease; position: relative; }
+.fw-node:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.fw-node .fw-icon { font-size: 2.2rem; display: block; margin-bottom: 12px; }
+.fw-node .fw-metric { font-size: 0.73rem; color: var(--green); font-weight: 500; margin-top: 10px; display: block; background: var(--green-pale); padding: 6px 10px; border-radius: 8px; }
+.fw-node::after { content: '\2192'; position: absolute; right: -26px; top: 50%; transform: translateY(-50%); font-size: 1.3rem; color: var(--green); font-weight: 700; opacity: 0.5; z-index: 2; }
+.fw-node:nth-child(3n)::after { display: none; }
+.fw-node:last-of-type::after { display: none; }
+.fw-core { background: linear-gradient(135deg, var(--green) 0%, var(--dark-green) 100%); color: white; border-radius: var(--radius); padding: 34px 40px; text-align: center; font-family: 'Apercu', 'Poppins', sans-serif; font-size: 0.95rem; font-weight: 700; line-height: 1.5; grid-column: 1 / -1; box-shadow: 0 8px 28px rgba(62,147,108,0.22); }
+.fw-arrow { display: none; }
+
+/* WEAPON CARDS */
+.weapon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 36px; }
+.weapon-card { background: white; border-radius: var(--radius); padding: 36px 24px; text-align: center; border: 1px solid rgba(0,0,0,0.05); box-shadow: var(--shadow-sm); transition: box-shadow 0.3s ease, transform 0.3s ease; }
+.weapon-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.weapon-icon { font-size: 2.4rem; margin-bottom: 16px; display: block; }
+.weapon-card h3 { font-size: 0.9rem; margin-bottom: 12px; }
+.weapon-card p { font-size: 0.8rem; color: var(--grey); line-height: 1.6; }
+
+/* MULTIPLICATION */
+.mult-row { display: flex; align-items: center; gap: 24px; margin: 48px 0; flex-wrap: wrap; justify-content: center; }
+.mult-input { background: var(--navy); color: white; border-radius: var(--radius); padding: 32px 36px; text-align: center; min-width: 140px; box-shadow: var(--shadow-md); }
+.mult-input .mult-num { font-family: 'Apercu', 'Poppins', sans-serif; font-size: 3.2rem; font-weight: 700; letter-spacing: -0.02em; }
+.mult-input .mult-label { font-size: 0.75rem; opacity: 0.75; margin-top: 8px; }
+.mult-arrow { font-size: 2.4rem; color: var(--green); font-weight: 700; opacity: 0.55; }
+.mult-result { background: linear-gradient(135deg, var(--green) 0%, var(--dark-green) 100%); color: white; border-radius: var(--radius); padding: 32px 44px; text-align: center; min-width: 200px; box-shadow: 0 8px 28px rgba(62,147,108,0.25); }
+.mult-result .mult-num { font-family: 'Apercu', 'Poppins', sans-serif; font-size: 3.2rem; font-weight: 700; letter-spacing: -0.02em; }
+.mult-result .mult-label { font-size: 0.75rem; opacity: 0.85; margin-top: 8px; }
+
+/* EXECUTION LAYERS */
+.exec-layers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 44px; }
+.exec-layer { border-radius: var(--radius); padding: 44px 32px; text-align: center; box-shadow: var(--shadow-md); }
+.exec-layer-1 { background: linear-gradient(135deg, var(--navy) 0%, #252540 100%); color: white; }
+.exec-layer-2 { background: linear-gradient(135deg, var(--green) 0%, var(--dark-green) 100%); color: white; }
+.exec-layer-3 { background: white; color: var(--navy); border: 1px solid rgba(0,0,0,0.05); }
+.exec-pct { font-family: 'Apercu', 'Poppins', sans-serif; font-size: 4.5rem; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+.exec-layer h3 { margin-top: 18px; margin-bottom: 14px; font-size: 1.2rem; }
+.exec-layer-1 h3, .exec-layer-2 h3 { color: white; }
+.exec-layer p { font-size: 0.84rem; opacity: 0.85; line-height: 1.65; }
+
+/* MOAT */
+.moat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 40px; }
+.moat-item { text-align: center; padding: 40px 24px; background: white; border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.05); box-shadow: var(--shadow-sm); transition: box-shadow 0.3s ease, transform 0.3s ease; }
+.moat-item:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.moat-icon { font-size: 2.6rem; margin-bottom: 18px; display: block; }
+.moat-item h3 { font-size: 0.95rem; margin-bottom: 12px; }
+.moat-item p { font-size: 0.8rem; color: var(--grey); line-height: 1.6; }
+
+/* TIMELINE */
+.timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; }
+.tl-item { position: relative; padding: 30px 24px; border-radius: var(--radius); border: 2px solid #e8e8e8; background: white; box-shadow: var(--shadow-sm); transition: box-shadow 0.25s ease; }
+.tl-item-active { border-color: var(--green); background: var(--green-pale); box-shadow: 0 4px 16px rgba(62,147,108,0.12); }
+.tl-month { font-family: 'Apercu', 'Poppins', sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--green); font-weight: 700; margin-bottom: 12px; }
+.tl-item h3 { font-size: 1.05rem; margin-bottom: 14px; }
+.tl-item ul { list-style: none; }
+.tl-item li { font-size: 0.78rem; color: var(--grey); padding: 5px 0 5px 20px; position: relative; line-height: 1.5; }
+.tl-item li::before { content: ''; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+.tl-val { font-family: 'Apercu', 'Poppins', sans-serif; font-size: 2rem; font-weight: 700; color: var(--green); margin-top: 18px; letter-spacing: -0.02em; }
+.tl-val-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey-light); margin-top: 4px; }
+
+/* PILLAR TAGS */
+.pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; }
+.pillar-tag { background: white; border: 1px solid rgba(0,0,0,0.06); border-radius: var(--radius-sm); padding: 24px; box-shadow: var(--shadow-sm); transition: box-shadow 0.25s ease, transform 0.25s ease; }
+.pillar-tag:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.pillar-tag h3 { font-size: 0.9rem; margin-bottom: 8px; }
+.pillar-tag p { font-size: 0.78rem; color: var(--grey); line-height: 1.55; }
+
+/* PIPELINE */
+.pipeline { display: flex; align-items: stretch; gap: 0; margin: 40px 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); }
+.pipeline-step { flex: 1; padding: 28px 20px; text-align: center; background: var(--green-pale); border-right: 3px solid var(--green); position: relative; }
+.pipeline-step:last-child { border-right: none; }
+.pipeline-step::after { content: '\2192'; position: absolute; right: -14px; top: 50%; transform: translateY(-50%); font-size: 1.3rem; color: var(--green); font-weight: 700; z-index: 1; }
+.pipeline-step:last-child::after { display: none; }
+.pipeline-step h3 { font-size: 0.9rem; margin-bottom: 8px; color: var(--navy); }
+.pipeline-step p { font-size: 0.78rem; color: var(--grey); line-height: 1.5; }
+.pipeline-step .pipe-icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
+
+/* WIREFRAME BOX */
+.wireframe { border: 2px dashed var(--green); border-radius: var(--radius); padding: 30px; margin: 20px 0; background: var(--green-pale); }
+.wireframe h3 { font-size: 0.95rem; margin-bottom: 16px; color: var(--navy); }
+.wireframe-section { background: white; border-radius: 10px; padding: 13px 18px; margin: 9px 0; border: 1px solid #e0e0e0; font-size: 0.82rem; color: var(--grey); line-height: 1.55; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+
+/* SMOOTH SCROLL BETWEEN SLIDES */
+.slide + .slide { border-top: 1px solid rgba(0,0,0,0.05); }
+.slide-green + .slide, .slide-navy + .slide, .slide + .slide-green, .slide + .slide-navy { border-top: none; }
+.slide-alt + .slide:not(.slide-alt) { border-top: none; }
+.slide:not(.slide-alt) + .slide-alt { border-top: none; }
+
+/* ============================================================
+   RESPONSIVE — TABLET (max-width: 900px)
+   ============================================================ */
+@media (max-width: 900px) {
+  .slide { padding: 48px 24px; }
+  .cover { grid-template-columns: 1fr; }
+  .cover-left { padding: 48px 24px; }
+  .cover-right { min-height: 40vh; }
+  h1 { font-size: 2.4rem; }
+  h2 { font-size: 2rem; }
+  .two-col, .card-grid, .card-grid-4, .steps, .exec-layers, .timeline, .moat-grid, .weapon-grid, .pillar-grid { grid-template-columns: 1fr !important; }
+  .card-grid-2 { grid-template-columns: 1fr !important; }
+  .stat-row { gap: 32px; }
+  .section-divider .slide-inner { flex-direction: column; gap: 20px; }
+  .section-number { font-size: 6rem; }
+  .flywheel-grid { grid-template-columns: 1fr; }
+  .fw-node::after { display: none; }
+  .fw-core { grid-column: auto; }
+  .mult-row { flex-direction: column; align-items: center; }
+  .stat-val { font-size: 2.2rem; }
+  .stat-val-lg { font-size: 2.8rem; }
+  .pipeline { flex-direction: column; border-radius: var(--radius); }
+  .pipeline-step { border-right: none; border-bottom: 3px solid var(--green); }
+  .pipeline-step:last-child { border-bottom: none; }
+  .pipeline-step::after { display: none; }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE (max-width: 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+  .slide { padding: 32px 20px; min-height: auto; }
+  .slide-inner { max-width: 100%; }
+  .slide + .slide { border-top: 3px solid rgba(0,0,0,0.08); }
+  .slide-green + .slide, .slide-navy + .slide, .slide + .slide-green, .slide + .slide-navy { border-top: none; }
+  .slide-alt + .slide:not(.slide-alt), .slide:not(.slide-alt) + .slide-alt { border-top: 3px solid rgba(0,0,0,0.08); }
+  .cover { grid-template-columns: 1fr; min-height: auto; }
+  .cover-left { padding: 40px 20px 32px; }
+  .cover-right { min-height: auto; padding: 40px 20px; }
+  .cover-right-inner .big-stat { font-size: 3.5rem; }
+  .cover-right-inner .stat-label { font-size: 0.9rem; margin-top: 12px; }
+  .cover-meta { flex-direction: column; gap: 16px; }
+  .cover-sub { font-size: 1rem; margin-bottom: 28px; }
+  .cover h1 { font-size: 2rem; }
+  h1 { font-size: 1.8rem; line-height: 1.15; }
+  h2 { font-size: 1.4rem; line-height: 1.2; }
+  h3 { font-size: 1.1rem; }
+  p, .subtitle { font-size: 0.88rem; line-height: 1.6; }
+  .subtitle { max-width: 100%; }
+  .section-divider { padding: 48px 20px; }
+  .section-divider .slide-inner { flex-direction: column; gap: 12px; }
+  .section-number { font-size: 4.5rem; min-width: auto; }
+  .section-divider h2 { font-size: 1.8rem; }
+  .section-divider p { font-size: 0.9rem; max-width: 100%; margin-top: 12px; }
+  .section-divider::before { width: 400px; height: 400px; top: -20%; right: -25%; }
+  .section-divider::after { width: 300px; height: 300px; bottom: -15%; left: -15%; }
+  .card-grid, .card-grid-2, .card-grid-4 { grid-template-columns: 1fr !important; gap: 16px; margin-top: 24px; }
+  .card { padding: 24px 20px; }
+  .card .card-icon { font-size: 2rem; margin-bottom: 12px; }
+  .card p { font-size: 0.85rem; }
+  .two-col { grid-template-columns: 1fr !important; gap: 24px; }
+  .stat-row { gap: 20px; margin: 28px 0; }
+  .stat-val { font-size: 2rem; }
+  .stat-val-lg { font-size: 2.4rem; }
+  .stat-val-navy { font-size: 2rem; }
+  .stat-label { font-size: 0.68rem; margin-top: 8px; }
+  .card-grid [style*="font-size:2.8rem"],
+  .card-grid [style*="font-size: 2.8rem"],
+  .card-grid [style*="font-size:2.4rem"],
+  .card-grid [style*="font-size: 2.4rem"] { font-size: 1.8rem !important; }
+  table { font-size: 0.72rem; margin: 1rem 0; min-width: 500px; }
+  th { padding: 8px 10px; font-size: 0.68rem; white-space: nowrap; }
+  td { padding: 8px 10px; font-size: 0.72rem; }
+  .table-wrap { margin: 1rem 0; border-radius: var(--radius-sm); }
+  .slide-inner, .card, .two-col > div, .insight, .wireframe { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .steps { grid-template-columns: 1fr !important; gap: 16px; margin: 28px 0; }
+  .step { padding: 28px 20px; }
+  .step-num { font-size: 2rem; margin-bottom: 12px; }
+  .flywheel-grid { grid-template-columns: 1fr !important; gap: 16px; margin: 28px 0; }
+  .fw-node { padding: 20px 16px; }
+  .fw-node::after { display: none !important; }
+  .fw-core { grid-column: auto !important; padding: 24px 20px; font-size: 0.88rem; }
+  .fw-node .fw-icon { font-size: 1.8rem; margin-bottom: 8px; }
+  .fw-node .fw-metric { font-size: 0.68rem; padding: 5px 8px; }
+  .weapon-grid { grid-template-columns: 1fr !important; gap: 16px; }
+  .weapon-card { padding: 24px 20px; }
+  .weapon-icon { font-size: 2rem; margin-bottom: 12px; }
+  .weapon-card h3 { font-size: 0.85rem; }
+  .weapon-card p { font-size: 0.78rem; }
+  .mult-row { flex-direction: column; align-items: center; gap: 12px; margin: 28px 0; }
+  .mult-input { min-width: auto; width: 100%; max-width: 280px; padding: 24px 20px; }
+  .mult-input .mult-num { font-size: 2.2rem; }
+  .mult-result { min-width: auto; width: 100%; max-width: 280px; padding: 24px 20px; }
+  .mult-result .mult-num { font-size: 2.2rem; }
+  .mult-arrow { font-size: 1.8rem; }
+  .exec-layers { grid-template-columns: 1fr !important; gap: 20px; }
+  .exec-layer { padding: 32px 24px; }
+  .exec-pct { font-size: 2.8rem; }
+  .moat-grid { grid-template-columns: 1fr !important; gap: 16px; }
+  .moat-item { padding: 28px 20px; }
+  .moat-icon { font-size: 2rem; margin-bottom: 12px; }
+  .moat-item h3 { font-size: 0.88rem; }
+  .timeline { grid-template-columns: 1fr !important; gap: 16px; }
+  .tl-item { padding: 24px 20px; }
+  .tl-val { font-size: 1.6rem; }
+  .pillar-grid { grid-template-columns: 1fr !important; gap: 14px; margin-top: 20px; }
+  .pillar-tag { padding: 18px 16px; }
+  .pipeline { flex-direction: column; }
+  .pipeline-step { border-right: none; border-bottom: 2px solid var(--green); padding: 20px 16px; }
+  .pipeline-step:last-child { border-bottom: none; }
+  .pipeline-step::after { display: none; }
+  .pipeline-step .pipe-icon { font-size: 1.4rem; margin-bottom: 6px; }
+  .wireframe { padding: 20px 16px; margin: 16px 0; }
+  .wireframe-section { padding: 10px 14px; font-size: 0.78rem; }
+  .insight { padding: 20px 18px; margin: 24px 0; }
+  .insight p { font-size: 0.84rem; }
+  .contact-row { flex-direction: column; gap: 24px; align-items: center; margin-top: 32px; }
+  img, svg, video, iframe { max-width: 100%; height: auto; }
+  .check-list li { font-size: 0.84rem; padding: 6px 0 6px 28px; }
+  .green-line { width: 40px; margin: 14px 0; }
+  .card:hover, .weapon-card:hover, .fw-node:hover, .moat-item:hover, .step:hover, .pillar-tag:hover, .tl-item:hover { transform: none; box-shadow: var(--shadow-sm); }
+}
+
+/* ============================================================
+   RESPONSIVE — SMALL MOBILE (max-width: 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+  .slide { padding: 24px 16px; }
+  .cover-left { padding: 32px 16px 24px; }
+  .cover-right { padding: 32px 16px; }
+  .cover-right-inner .big-stat { font-size: 2.8rem; }
+  .cover h1 { font-size: 1.6rem; }
+  .cover-sub { font-size: 0.9rem; margin-bottom: 20px; }
+  .cover-logo { font-size: 0.6rem; margin-bottom: 24px; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  h3 { font-size: 1rem; }
+  h4 { font-size: 0.68rem; }
+  p { font-size: 0.85rem; line-height: 1.55; }
+  .section-divider { padding: 36px 16px; }
+  .section-number { font-size: 3.5rem; }
+  .section-divider h2 { font-size: 1.5rem; }
+  .section-divider p { font-size: 0.82rem; line-height: 1.6; }
+  .stat-val { font-size: 1.6rem; }
+  .stat-val-lg { font-size: 2rem; }
+  .stat-label { font-size: 0.62rem; }
+  .card-grid [style*="font-size:2.8rem"],
+  .card-grid [style*="font-size: 2.8rem"],
+  .card-grid [style*="font-size:2.4rem"],
+  .card-grid [style*="font-size: 2.4rem"] { font-size: 1.5rem !important; }
+  .card { padding: 20px 16px; border-radius: 12px; }
+  .card-grid, .card-grid-2, .card-grid-4 { gap: 12px; margin-top: 20px; }
+  .card .card-icon { font-size: 1.6rem; margin-bottom: 10px; }
+  table { font-size: 0.68rem; min-width: 420px; }
+  th { padding: 6px 8px; font-size: 0.64rem; }
+  td { padding: 6px 8px; font-size: 0.68rem; }
+  .mult-input, .mult-result { max-width: 240px; padding: 20px 16px; }
+  .mult-input .mult-num, .mult-result .mult-num { font-size: 1.8rem; }
+  .mult-label { font-size: 0.65rem; }
+  .exec-pct { font-size: 2.2rem; }
+  .exec-layer { padding: 28px 20px; }
+  .exec-layer h3 { font-size: 1rem; }
+  .step { padding: 24px 16px; }
+  .step-num { font-size: 1.6rem; }
+  .step h3 { font-size: 0.95rem; }
+  .step p { font-size: 0.78rem; }
+  .fw-node { padding: 16px 14px; font-size: 0.78rem; }
+  .fw-core { padding: 20px 16px; font-size: 0.82rem; }
+  .moat-item { padding: 24px 16px; }
+  .moat-icon { font-size: 1.6rem; }
+  .tl-item { padding: 20px 16px; }
+  .tl-val { font-size: 1.4rem; }
+  .tl-month { font-size: 0.65rem; }
+  .tl-item h3 { font-size: 0.9rem; }
+  .tl-item li { font-size: 0.72rem; }
+  .weapon-card { padding: 20px 16px; }
+  .weapon-icon { font-size: 1.6rem; }
+  .insight { padding: 16px 14px; margin: 20px 0; }
+  .insight p { font-size: 0.8rem; }
+  .wireframe { padding: 16px 12px; }
+  .wireframe-section { padding: 8px 12px; font-size: 0.74rem; }
+  .pipeline-step { padding: 16px 14px; }
+  .pipeline-step h3 { font-size: 0.82rem; }
+  .pipeline-step p { font-size: 0.72rem; }
+  .pillar-tag { padding: 14px 12px; }
+  .pillar-tag h3 { font-size: 0.82rem; }
+  .pillar-tag p { font-size: 0.72rem; }
+  .contact-row { gap: 20px; }
+  .contact-item p { font-size: 0.85rem; }
+  .closing h2 { font-size: 1.3rem; }
+  #password-gate .gate-box { padding: 32px 24px; }
+  #password-gate h2 { font-size: 1.2rem; }
+}
+
+@media print {
+  .slide { min-height: auto; page-break-after: always; padding: 48px 40px; }
+  .slide:last-child { page-break-after: avoid; }
+  .card, .weapon-card, .fw-node, .moat-item, .step, .pillar-tag, .tl-item, .exec-layer { box-shadow: none !important; transform: none !important; }
+  .card:hover, .weapon-card:hover, .fw-node:hover, .moat-item:hover, .step:hover { box-shadow: none !important; transform: none !important; }
+  .section-divider::before, .section-divider::after { display: none; }
+  .slide + .slide { border-top: none; }
+  .fw-node::after { display: none; }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  table { page-break-inside: avoid; }
+  .card-grid, .card-grid-2, .card-grid-4, .weapon-grid, .moat-grid { page-break-inside: avoid; }
+  .insight { page-break-inside: avoid; }
+  #password-gate { display: none !important; }
+  #deck-content { display: block !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- PASSWORD GATE -->
+<div id="password-gate">
+  <div class="gate-logo">Covert Digital</div>
+  <div class="gate-box">
+    <h2>Protected Presentation</h2>
+    <p class="gate-sub">Enter the password to view this deck</p>
+    <input type="password" id="gate-input" placeholder="Enter password" autocomplete="off" autofocus>
+    <button id="gate-btn" style="width:100%;padding:14px;margin-top:16px;background:var(--green);color:white;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;transition:background 0.2s;" onmouseover="this.style.background='#017F4E'" onmouseout="this.style.background='#3E936C'">View Presentation</button>
+    <p class="gate-error" id="gate-error">Incorrect password. Please try again.</p>
+  </div>
+</div>
+
+<!-- DECK CONTENT -->
+<div id="deck-content">
+
+<!-- ============================================================
+     SLIDE 1 — COVER
+     ============================================================ -->
+<div class="cover">
+  <div class="cover-left">
+    <div class="cover-logo">Covert Digital</div>
+    <h1>Dominate Off-Market Property Search<span class="period">.</span></h1>
+    <p class="cover-sub">SEO, AEO &amp; Authority Building Strategy</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span>Prepared For</span>
+        <span>Amit / Propsourcing</span>
+      </div>
+      <div class="cover-meta-item">
+        <span>Date</span>
+        <span>April 2026</span>
+      </div>
+      <div class="cover-meta-item">
+        <span>Investment</span>
+        <span>$3,000/month</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-right">
+    <div class="cover-right-inner">
+      <div class="big-stat">18,000+</div>
+      <div class="stat-label">monthly searches for off-market<br>property keywords in Australia</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 2 — SECTION DIVIDER: Where You Stand Today
+     ============================================================ -->
+<div class="slide slide-green section-divider">
+  <div class="slide-inner">
+    <div class="section-number">01</div>
+    <div>
+      <h2>Where You Stand Today</h2>
+      <p>Current rankings, competitive gaps, and the massive opportunity ahead.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 3 — CURRENT RANKINGS
+     ============================================================ -->
+<div class="slide">
+  <div class="slide-inner">
+    <h4>CURRENT RANKINGS</h4>
+    <h2>18,000+ Monthly Searches. You're Not Ranking for Any of Them.</h2>
+
+    <div class="table-wrap" style="margin-top:32px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Keyword</th>
+            <th>Monthly Volume</th>
+            <th>Current Rank</th>
+            <th>Difficulty</th>
+            <th>Target Page</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>off market property</strong></td>
+            <td>4,400</td>
+            <td>20-30+</td>
+            <td>High</td>
+            <td>Homepage</td>
+          </tr>
+          <tr>
+            <td><strong>off market properties Australia</strong></td>
+            <td>1,900</td>
+            <td>15-25</td>
+            <td>High</td>
+            <td>Homepage</td>
+          </tr>
+          <tr>
+            <td><strong>off market property Sydney</strong></td>
+            <td>1,600</td>
+            <td>Not ranking</td>
+            <td>High</td>
+            <td>/off-market-property/nsw</td>
+          </tr>
+          <tr>
+            <td><strong>how to find off market property</strong></td>
+            <td>1,600</td>
+            <td>Not ranking</td>
+            <td>Medium</td>
+            <td>Blog</td>
+          </tr>
+          <tr>
+            <td><strong>off market property Melbourne</strong></td>
+            <td>1,300</td>
+            <td>Not ranking</td>
+            <td>High</td>
+            <td>/off-market-property/vic</td>
+          </tr>
+          <tr>
+            <td><strong>off market listings</strong></td>
+            <td>1,300</td>
+            <td>20+</td>
+            <td>High</td>
+            <td>Homepage</td>
+          </tr>
+          <tr>
+            <td><strong>off market property Brisbane</strong></td>
+            <td>880</td>
+            <td>Not ranking</td>
+            <td>Medium</td>
+            <td>/off-market-property/qld</td>
+          </tr>
+          <tr>
+            <td><strong>off market homes for sale</strong></td>
+            <td>720</td>
+            <td>Not ranking</td>
+            <td>Medium</td>
+            <td>Homepage</td>
+          </tr>
+          <tr>
+            <td><strong>private property sales Australia</strong></td>
+            <td>720</td>
+            <td>Not ranking</td>
+            <td>Medium</td>
+            <td>Blog</td>
+          </tr>
+          <tr>
+            <td><strong>off market real estate</strong></td>
+            <td>590</td>
+            <td>Not ranking</td>
+            <td>Medium</td>
+            <td>Homepage</td>
+          </tr>
+          <tr>
+            <td><strong>off market property Perth</strong></td>
+            <td>480</td>
+            <td>Not ranking</td>
+            <td>Medium</td>
+            <td>/off-market-property/wa</td>
+          </tr>
+          <tr>
+            <td><strong>buy off market property</strong></td>
+            <td>480</td>
+            <td>Not ranking</td>
+            <td>Medium</td>
+            <td>/investors</td>
+          </tr>
+          <tr>
+            <td><strong>off market investment property</strong></td>
+            <td>390</td>
+            <td>Not ranking</td>
+            <td>Medium</td>
+            <td>/investors</td>
+          </tr>
+          <tr>
+            <td><strong>off market property Adelaide</strong></td>
+            <td>390</td>
+            <td>Not ranking</td>
+            <td>Low-Med</td>
+            <td>/off-market-property/sa</td>
+          </tr>
+          <tr>
+            <td><strong>pre market property</strong></td>
+            <td>320</td>
+            <td>Not ranking</td>
+            <td>Low-Med</td>
+            <td>New page</td>
+          </tr>
+          <tr>
+            <td><strong>off market property Gold Coast</strong></td>
+            <td>260</td>
+            <td>Not ranking</td>
+            <td>Low-Med</td>
+            <td>Suburb page</td>
+          </tr>
+          <tr>
+            <td><strong>off market property deals</strong></td>
+            <td>260</td>
+            <td>Not ranking</td>
+            <td>Low-Med</td>
+            <td>Blog</td>
+          </tr>
+          <tr>
+            <td><strong>off market property Canberra</strong></td>
+            <td>210</td>
+            <td>Not ranking</td>
+            <td>Low</td>
+            <td>/off-market-property/act</td>
+          </tr>
+          <tr>
+            <td><strong>off market property app</strong></td>
+            <td>170</td>
+            <td>Not ranking</td>
+            <td>Low</td>
+            <td>Homepage</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="insight" style="margin-top:36px;">
+      <p><strong>You're indexed but invisible.</strong> State pages exist but aren't ranking for any high-value terms. The platform is solid -- Google just doesn't see Propsourcing as an authority in this space yet.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 4 — COMPETITIVE GAP
+     ============================================================ -->
+<div class="slide slide-alt">
+  <div class="slide-inner">
+    <h4>THE AUTHORITY GAP</h4>
+    <h2>Who's Ranking -- And Why</h2>
+
+    <div class="table-wrap" style="margin-top:32px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Competitor</th>
+            <th>Domain Rating</th>
+            <th>Referring Domains</th>
+            <th>Key Advantage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Domain.com.au</strong></td>
+            <td>DR 92</td>
+            <td>45,000+</td>
+            <td>Massive portal authority</td>
+          </tr>
+          <tr>
+            <td><strong>Listing Loop</strong></td>
+            <td>DR 52</td>
+            <td>1,200+</td>
+            <td>Strong brand, #1 off-market claim</td>
+          </tr>
+          <tr>
+            <td><strong>offmarketlistings.net.au</strong></td>
+            <td>DR 35</td>
+            <td>380+</td>
+            <td>Keyword-rich exact-match domain</td>
+          </tr>
+          <tr>
+            <td><strong>NOKK</strong></td>
+            <td>DR 28</td>
+            <td>240+</td>
+            <td>Database approach, directory model</td>
+          </tr>
+          <tr>
+            <td><strong>Propsourcing</strong></td>
+            <td style="color:var(--green);font-weight:700;">DR 15 (est.)</td>
+            <td style="color:var(--green);font-weight:700;">80 (est.)</td>
+            <td>Great platform, no authority</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="insight" style="margin-top:36px;">
+      <p><strong>Content quality isn't the issue.</strong> Propsourcing has a solid platform -- but Google sees a DR 15 site competing against DR 50-90 domains. Authority is the bottleneck. Without links, you could have the best content on the internet and still not rank.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 5 — THE OPPORTUNITY
+     ============================================================ -->
+<div class="slide">
+  <div class="slide-inner">
+    <h4>MARKET OPPORTUNITY</h4>
+    <h2>Off-Market Is Booming. The #1 Spot Is Open.</h2>
+
+    <div class="stat-row">
+      <div>
+        <div class="stat-val">1 in 5</div>
+        <div class="stat-label">Sydney homes sold off-market<br>AFR, March 2026</div>
+      </div>
+      <div>
+        <div class="stat-val">18,000+</div>
+        <div class="stat-label">Monthly searches<br>growing year-on-year</div>
+      </div>
+      <div>
+        <div class="stat-val">No clear #1</div>
+        <div class="stat-label">Fragmented competition<br>No dominant platform</div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <p><strong>Listing Loop claims #1 but their DR is beatable.</strong> Domain has authority but no dedicated off-market experience. NOKK and offmarketlistings are niche but weak on authority. This gap is Propsourcing's to take -- with the right link building strategy.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 6 — SECTION DIVIDER: Authority & Link Building
+     ============================================================ -->
+<div class="slide slide-navy section-divider">
+  <div class="slide-inner">
+    <div class="section-number">02</div>
+    <div>
+      <h2>Authority &amp; Link Building</h2>
+      <p>The single most important lever for ranking #1. This is where we win.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 7 — WHY LINKS WIN THIS RACE
+     ============================================================ -->
+<div class="slide">
+  <div class="slide-inner">
+    <h4>THE RANKING EQUATION</h4>
+    <h2>Authority Is the Deciding Factor</h2>
+
+    <div class="exec-layers">
+      <div class="exec-layer exec-layer-1">
+        <div class="exec-pct">DR 92</div>
+        <h3>Domain.com.au</h3>
+        <p>Untouchable portal authority. 45K+ referring domains.</p>
+      </div>
+      <div class="exec-layer exec-layer-2">
+        <div class="exec-pct">DR 52</div>
+        <h3>Listing Loop</h3>
+        <p>Current #1 for off-market terms. 1,200+ referring domains.</p>
+      </div>
+      <div class="exec-layer exec-layer-3">
+        <div class="exec-pct">DR 15</div>
+        <h3>Propsourcing</h3>
+        <p>Strong platform, zero authority. 80 referring domains.</p>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:40px;">
+      <p><strong>For "off market property" keywords, the top 5 results ALL have DR 30+.</strong> Content alone won't close this gap -- we need to systematically build domain authority through strategic link acquisition. That's what this proposal is built around.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 8 — 3-TIER LINK BUILDING STRATEGY
+     ============================================================ -->
+<div class="slide slide-alt">
+  <div class="slide-inner">
+    <h4>THE LINK ENGINE</h4>
+    <h2>Three Tiers. One Goal: Authority.</h2>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon" style="color:var(--green);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <h3>Tier 1: Icaros Authority Network</h3>
+        <p>Our proprietary media network delivers contextual, relevant links from property, investment, and finance publications. 8-12 high-authority links per month from controlled, scalable placements. Average DR 40-60.</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 9 — LINK VELOCITY ROADMAP
+     ============================================================ -->
+<div class="slide">
+  <div class="slide-inner">
+    <h4>LINK VELOCITY</h4>
+    <h2>The Accumulation Plan</h2>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-month">Month 1-3</div>
+        <h3>Foundation</h3>
+        <ul>
+          <li>15-20 links/month</li>
+          <li>Focus on Icaros authority network</li>
+          <li>Establish link profile diversity</li>
+          <li>Target DR growth to 22-25</li>
+        </ul>
+        <div class="tl-val">60</div>
+        <div class="tl-val-label">links by month 3</div>
+      </div>
+      <div class="tl-item tl-item-active">
+        <div class="tl-month">Month 4-6</div>
+        <h3>Acceleration</h3>
+        <ul>
+          <li>25-35 links/month</li>
+          <li>Icaros volume scales up</li>
+          <li>Topical relevance deepening</li>
+          <li>Target DR growth to 30-35</li>
+        </ul>
+        <div class="tl-val">150</div>
+        <div class="tl-val-label">cumulative links</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-month">Month 7-9</div>
+        <h3>Authority</h3>
+        <ul>
+          <li>30-40 links/month</li>
+          <li>Authority compounding</li>
+          <li>Ranking momentum building</li>
+          <li>Target DR growth to 38-42</li>
+        </ul>
+        <div class="tl-val">260</div>
+        <div class="tl-val-label">cumulative links</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-month">Month 10-12</div>
+        <h3>Dominance</h3>
+        <ul>
+          <li>30-40 links/month</li>
+          <li>Sustained authority building</li>
+          <li>Competitive DR parity achieved</li>
+          <li>Target DR 42-48</li>
+        </ul>
+        <div class="tl-val">380+</div>
+        <div class="tl-val-label">cumulative links</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ============================================================
+     SLIDE 11 — ANCHOR TEXT STRATEGY
+     ============================================================ -->
+<div class="slide">
+  <div class="slide-inner">
+    <h4>ANCHOR PROFILE</h4>
+    <h2>Natural Distribution Google Rewards</h2>
+
+    <div class="two-col" style="margin-top:40px;">
+      <div>
+        <div style="margin-bottom:12px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+            <span style="font-size:0.82rem;width:200px;color:var(--grey);font-weight:500;">Branded "propsourcing" (40%)</span>
+            <div style="height:24px;width:40%;background:var(--green);border-radius:6px;"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+            <span style="font-size:0.82rem;width:200px;color:var(--grey);font-weight:500;">Naked URL (20%)</span>
+            <div style="height:24px;width:20%;background:var(--navy);border-radius:6px;"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+            <span style="font-size:0.82rem;width:200px;color:var(--grey);font-weight:500;">Exact match (15%)</span>
+            <div style="height:24px;width:15%;background:#5ab88a;border-radius:6px;"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+            <span style="font-size:0.82rem;width:200px;color:var(--grey);font-weight:500;">Partial match (15%)</span>
+            <div style="height:24px;width:15%;background:#9E9E9E;border-radius:6px;"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+            <span style="font-size:0.82rem;width:200px;color:var(--grey);font-weight:500;">Generic (10%)</span>
+            <div style="height:24px;width:10%;background:#d0d0d0;border-radius:6px;"></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="insight" style="margin-top:0;">
+          <p><strong>A natural-looking anchor profile is critical.</strong> Over-optimized exact-match anchors trigger penalties. Our 40% branded / 15% exact-match ratio mirrors what Google sees from organically-earned links. We monitor and adjust the distribution monthly to maintain a clean, penalty-proof profile.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 12 — TIMELINE TO #1
+     ============================================================ -->
+<div class="slide slide-alt">
+  <div class="slide-inner">
+    <h4>HONEST TIMELINE</h4>
+    <h2>When You'll Rank -- And Where</h2>
+
+    <div class="card-grid" style="margin-top:36px;">
+      <div class="card">
+        <h3>City Keywords</h3>
+        <p style="font-size:0.8rem;color:var(--grey-light);margin-bottom:16px;">"off market property Sydney", "off market property Melbourne"</p>
+        <p style="font-size:0.82rem;"><strong>Difficulty:</strong> Medium-High</p>
+        <p style="font-size:0.82rem;"><strong>Top 10:</strong> Month 3-4</p>
+        <p style="font-size:0.82rem;"><strong>Top 5:</strong> Month 4-6</p>
+        <p style="font-size:0.82rem;"><strong>Position #1-3:</strong> Month 6-9</p>
+        <div style="background:#e8e8e8;border-radius:8px;height:8px;margin-top:16px;">
+          <div style="background:var(--green);height:100%;width:75%;border-radius:8px;"></div>
+        </div>
+        <p style="font-size:0.7rem;color:var(--grey-light);margin-top:6px;text-align:right;">75% confidence</p>
+      </div>
+      <div class="card">
+        <h3>National Keywords</h3>
+        <p style="font-size:0.8rem;color:var(--grey-light);margin-bottom:16px;">"off market properties Australia", "off market listings"</p>
+        <p style="font-size:0.82rem;"><strong>Difficulty:</strong> High</p>
+        <p style="font-size:0.82rem;"><strong>Top 10:</strong> Month 5-7</p>
+        <p style="font-size:0.82rem;"><strong>Top 5:</strong> Month 6-9</p>
+        <p style="font-size:0.82rem;"><strong>Position #1-3:</strong> Month 9-12</p>
+        <div style="background:#e8e8e8;border-radius:8px;height:8px;margin-top:16px;">
+          <div style="background:var(--green);height:100%;width:50%;border-radius:8px;"></div>
+        </div>
+        <p style="font-size:0.7rem;color:var(--grey-light);margin-top:6px;text-align:right;">50% confidence</p>
+      </div>
+      <div class="card">
+        <h3>Head Term</h3>
+        <p style="font-size:0.8rem;color:var(--grey-light);margin-bottom:16px;">"off market property" (4,400/mo)</p>
+        <p style="font-size:0.82rem;"><strong>Difficulty:</strong> Very High</p>
+        <p style="font-size:0.82rem;"><strong>Top 10:</strong> Month 7-10</p>
+        <p style="font-size:0.82rem;"><strong>Top 5:</strong> Month 9-12</p>
+        <p style="font-size:0.82rem;"><strong>Position #1-3:</strong> Month 12-18</p>
+        <div style="background:#e8e8e8;border-radius:8px;height:8px;margin-top:16px;">
+          <div style="background:var(--green);height:100%;width:30%;border-radius:8px;"></div>
+        </div>
+        <p style="font-size:0.7rem;color:var(--grey-light);margin-top:6px;text-align:right;">30% confidence (12mo)</p>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:36px;">
+      <p><strong>These are conservative estimates</strong> assuming consistent $3K/month investment. More aggressive link building = faster timelines. We'll report progress monthly against these benchmarks.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 13 — SECTION DIVIDER: SEO Strategy
+     ============================================================ -->
+<div class="slide slide-green section-divider">
+  <div class="slide-inner">
+    <div class="section-number">03</div>
+    <div>
+      <h2>SEO Strategy</h2>
+      <p>Technical fixes, programmatic scale, and content architecture.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 14 — TECHNICAL SEO QUICK WINS
+     ============================================================ -->
+<div class="slide">
+  <div class="slide-inner">
+    <h4>TECHNICAL PRIORITIES</h4>
+    <h2>Fix the Foundation First</h2>
+
+    <div class="card-grid-2">
+      <div class="card">
+        <div class="card-icon" style="color:var(--green);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3>JS Rendering</h3>
+        <p>Your React/Next.js app likely has hydration issues for Googlebot. We'll audit render output, implement dynamic rendering or SSR fixes, and ensure Google sees full page content.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="color:var(--green);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><path d="M2 10h16M10 2a12 12 0 0 1 4 8 12 12 0 0 1-4 8 12 12 0 0 1-4-8 12 12 0 0 1 4-8z"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3>Schema Markup</h3>
+        <p>Add RealEstateListing, Product, and FAQPage structured data to every listing and state page. This directly impacts rich results and AI citation eligibility.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="color:var(--green);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><line x1="12" y1="8" x2="5" y2="16"/><line x1="12" y1="8" x2="19" y2="16"/><line x1="5" y1="19" x2="19" y2="19"/></svg>
+        </div>
+        <h3>Internal Linking</h3>
+        <p>State pages need systematic cross-linking: NSW to Sydney to Bondi, with contextual anchor text. Currently siloed -- we'll build a proper link architecture.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="color:var(--green);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h3>Core Web Vitals</h3>
+        <p>Page speed audit and optimization. JS bundle analysis, image optimization, lazy loading. Target: all green CWV scores within 60 days.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 15 — PROGRAMMATIC CONTENT PLAY
+     ============================================================ -->
+<div class="slide slide-alt">
+  <div class="slide-inner">
+    <h4>PROGRAMMATIC SEO</h4>
+    <h2>1,200 Pages. Zero Manual Effort.</h2>
+
+    <div class="mult-row">
+      <div class="mult-input">
+        <div class="mult-num">8</div>
+        <div class="mult-label">States</div>
+      </div>
+      <div class="mult-arrow">&times;</div>
+      <div class="mult-input">
+        <div class="mult-num">50</div>
+        <div class="mult-label">Suburbs</div>
+      </div>
+      <div class="mult-arrow">&times;</div>
+      <div class="mult-input">
+        <div class="mult-num">3</div>
+        <div class="mult-label">Property Types</div>
+      </div>
+      <div class="mult-arrow">=</div>
+      <div class="mult-result">
+        <div class="mult-num">1,200</div>
+        <div class="mult-label">Targeted Pages</div>
+      </div>
+    </div>
+
+    <p class="subtitle" style="text-align:center;margin:0 auto;">Each page targets a specific long-tail keyword: "off market apartments Bondi", "off market houses Parramatta", "off market property Brisbane northside".</p>
+
+    <div class="insight" style="margin-top:36px;">
+      <p><strong>Programmatic pages capture the long tail</strong> -- thousands of low-competition keywords that collectively drive massive organic traffic. We generate these at scale using our content engine, each with unique data, listings, and suburb-specific insights.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 16 — CONTENT HUB STRATEGY
+     ============================================================ -->
+<div class="slide">
+  <div class="slide-inner">
+    <h4>CONTENT ARCHITECTURE</h4>
+    <h2>Own the "How To" Conversation</h2>
+
+    <div class="two-col" style="margin-top:40px;">
+      <div>
+        <div style="background:var(--green);color:white;border-radius:var(--radius);padding:24px 28px;text-align:center;margin-bottom:24px;">
+          <h3 style="color:white;font-size:1.1rem;margin-bottom:4px;">Pillar Page</h3>
+          <p style="color:rgba(255,255,255,0.9);font-size:0.85rem;">"How to Find Off-Market Property"</p>
+          <p style="color:rgba(255,255,255,0.7);font-size:0.75rem;margin-top:4px;">1,600 searches/month</p>
+        </div>
+        <ul class="check-list">
+          <li>"Off market property pros and cons" (720/mo)</li>
+          <li>"Off market vs on market property" (480/mo)</li>
+          <li>"How buyers agents find off market deals" (390/mo)</li>
+          <li>"Off market property statistics 2026" (260/mo)</li>
+          <li>"Is buying off market cheaper?" (210/mo)</li>
+        </ul>
+      </div>
+      <div>
+        <div class="insight" style="margin-top:0;">
+          <p><strong>The content hub strategy does double duty:</strong> it ranks for informational keywords AND builds topical authority that lifts your commercial pages. Every spoke links to the pillar, every pillar links to your state pages. Google sees a comprehensive resource on the topic -- and rewards it with higher rankings across the entire site.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 17 — URL ARCHITECTURE
+     ============================================================ -->
+<div class="slide slide-alt">
+  <div class="slide-inner">
+    <h4>SITE STRUCTURE</h4>
+    <h2>Clean, Scalable URL Architecture</h2>
+
+    <div class="wireframe" style="margin-top:32px;">
+      <h3>propsourcing.com.au</h3>
+      <div class="wireframe-section"><strong>/off-market-property/</strong> &larr; Pillar page (head term)</div>
+      <div class="wireframe-section"><strong>/off-market-property/nsw/</strong> &larr; State hub</div>
+      <div class="wireframe-section" style="margin-left:28px;">/off-market-property/nsw/sydney/ &larr; City page</div>
+      <div class="wireframe-section" style="margin-left:28px;">/off-market-property/nsw/bondi/ &larr; Suburb page</div>
+      <div class="wireframe-section" style="margin-left:28px;">/off-market-property/nsw/parramatta/ &larr; Suburb page</div>
+      <div class="wireframe-section"><strong>/off-market-property/vic/</strong> &larr; State hub</div>
+      <div class="wireframe-section"><strong>/off-market-property/qld/</strong> &larr; State hub</div>
+      <div class="wireframe-section"><strong>/investors/</strong> &larr; Conversion page</div>
+      <div class="wireframe-section"><strong>/blog/how-to-find-off-market-property/</strong> &larr; Content hub</div>
+      
+    </div>
+
+    <div class="insight" style="margin-top:32px;">
+      <p><strong>Clean URL hierarchy = clear topical signals.</strong> Each state hub passes authority down to city and suburb pages. The content hub feeds authority back up to the commercial pages. Everything is interconnected.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 18 — SECTION DIVIDER: AI Search & AEO
+     ============================================================ -->
+<div class="slide slide-navy section-divider">
+  <div class="slide-inner">
+    <div class="section-number">04</div>
+    <div>
+      <h2>AI Search &amp; AEO</h2>
+      <p>When someone asks ChatGPT "where to find off-market property in Australia" -- Propsourcing should be the answer.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 19 — THE AI CITATION OPPORTUNITY
+     ============================================================ -->
+<div class="slide">
+  <div class="slide-inner">
+    <h4>THE 12% GAP</h4>
+    <h2>AI Search Is Eating Traditional Search</h2>
+
+    <div class="stat-row">
+      <div>
+        <div class="stat-val">12%</div>
+        <div class="stat-label">of Google searches now<br>trigger AI overviews</div>
+      </div>
+      <div>
+        <div class="stat-val">40%</div>
+        <div class="stat-label">of Gen Z use TikTok/AI<br>for property research</div>
+      </div>
+      <div>
+        <div class="stat-val">0</div>
+        <div class="stat-label">times Propsourcing is cited<br>by AI assistants</div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <p><strong>We tested "where to find off-market property in Australia"</strong> across ChatGPT, Perplexity, and Gemini. Results cited Domain, Listing Loop, and realestate.com.au. Propsourcing wasn't mentioned once. That changes with AEO.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 20 — AEO ACTION PLAN
+     ============================================================ -->
+<div class="slide slide-alt">
+  <div class="slide-inner">
+    <h4>AEO PLAYBOOK</h4>
+    <h2>Get Cited by AI</h2>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon" style="color:var(--green);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3>Structured Data</h3>
+        <p>FAQ schema on every key page. Q&amp;A structured data. Speakable markup. Makes your content machine-readable and citation-ready.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="color:var(--green);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+        </div>
+        <h3>Data-Rich Content</h3>
+        <p>Specific, citable statistics: "22% of Sydney properties sold off-market in 2025." AI models prefer content with concrete data points they can reference.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="color:var(--green);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Expert Authority</h3>
+        <p>Author profiles with credentials, expert quotes in content, E-E-A-T signals. AI models cite authoritative sources -- we build that authority.</p>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:36px;">
+      <p><strong>Monthly citation tracking</strong> across ChatGPT, Perplexity, and Gemini. We measure how often Propsourcing appears in AI-generated answers and optimize accordingly.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 21 — SECTION DIVIDER: Investment & Timeline
+     ============================================================ -->
+<div class="slide slide-green section-divider">
+  <div class="slide-inner">
+    <div class="section-number">05</div>
+    <div>
+      <h2>Investment &amp; Timeline</h2>
+      <p>What you get, what it costs, and when you'll see results.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 22 — MONTHLY INVESTMENT
+     ============================================================ -->
+<div class="slide">
+  <div class="slide-inner">
+    <h4>YOUR INVESTMENT</h4>
+    <h2>$3,000/month -- Everything Included</h2>
+
+    <div class="table-wrap" style="margin-top:32px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Deliverable</th>
+            <th>Monthly Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Icaros authority links</strong></td>
+            <td>20-30 links/month</td>
+          </tr>
+          <tr>
+            <td><strong>Programmatic pages</strong></td>
+            <td>80-100 pages (first 6 months)</td>
+          </tr>
+          <tr>
+            <td><strong>Blog / content hub articles</strong></td>
+            <td>2-4 articles</td>
+          </tr>
+          <tr>
+            <td><strong>Technical SEO</strong></td>
+            <td>Ongoing audit + fixes</td>
+          </tr>
+          <tr>
+            <td><strong>AEO optimization</strong></td>
+            <td>Schema, citation tracking</td>
+          </tr>
+          <tr>
+            <td><strong>Reporting</strong></td>
+            <td>Monthly performance report</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="insight" style="margin-top:36px;">
+      <p><strong>No lock-in contracts.</strong> Month-to-month. Results speak for themselves.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 23 — 12-MONTH ROADMAP
+     ============================================================ -->
+<div class="slide slide-alt">
+  <div class="slide-inner">
+    <h4>THE ROADMAP</h4>
+    <h2>12 Months to Market Leadership</h2>
+
+    <div class="timeline">
+      <div class="tl-item tl-item-active">
+        <div class="tl-month">Month 1-2</div>
+        <h3>Foundation</h3>
+        <ul>
+          <li>Technical audit + fixes</li>
+          <li>Content hub foundation</li>
+          <li>First link campaign</li>
+          <li>Schema implementation</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-month">Month 3-4</div>
+        <h3>Traction</h3>
+        <ul>
+          <li>Programmatic pages rolling out</li>
+          <li>Link velocity increasing</li>
+          <li>First ranking movements</li>
+          <li>AEO optimization live</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-month">Month 5-7</div>
+        <h3>Growth</h3>
+        <ul>
+          <li>Top 10 for city keywords</li>
+          <li>Content hub growing</li>
+          <li>AI citations starting</li>
+          <li>DR reaching 30+</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-month">Month 8-12</div>
+        <h3>Dominance</h3>
+        <ul>
+          <li>#1-3 for city keywords</li>
+          <li>Top 5 for head terms</li>
+          <li>AEO citations established</li>
+          <li>DR 40+ achieved</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 24 — PROJECTED TRAFFIC GROWTH
+     ============================================================ -->
+<div class="slide">
+  <div class="slide-inner">
+    <h4>PROJECTED RESULTS</h4>
+    <h2>Conservative Traffic Projections</h2>
+
+    <div class="stat-row">
+      <div>
+        <div class="stat-val">+100%</div>
+        <div class="stat-label">Organic traffic<br>by month 3</div>
+      </div>
+      <div>
+        <div class="stat-val">+300%</div>
+        <div class="stat-label">Organic traffic<br>by month 6</div>
+      </div>
+      <div>
+        <div class="stat-val">+500-800%</div>
+        <div class="stat-label">Organic traffic<br>by month 12</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:36px;background:var(--green-pale);border:1px solid var(--green);">
+      <p style="font-size:0.92rem;line-height:1.75;"><strong>At 18,000+ monthly searches and a conservative 15% click-through rate,</strong> ranking top 3 for key terms delivers ~2,700 organic visits/month. At a 3% enquiry rate, that's <strong>80+ property enquiries per month</strong> -- with zero ad spend.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 25 — NEXT STEPS
+     ============================================================ -->
+<div class="slide slide-alt">
+  <div class="slide-inner">
+    <h4>NEXT STEPS</h4>
+    <h2>Ready to Own Off-Market Search<span class="period">?</span></h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Approve Proposal</h3>
+        <p>Confirm the engagement and sign off on the strategy.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Technical Audit</h3>
+        <p>We run a full technical SEO audit within the first week.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Link Campaign</h3>
+        <p>First Icaros links deployed within 14 days.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Monthly Reporting</h3>
+        <p>Transparent reporting from day one. Rankings, links, traffic.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 26 — CLOSING
+     ============================================================ -->
+<div class="slide closing">
+  <div class="slide-inner">
+    <h2>Let's Make Propsourcing the #1 Off-Market Property Platform in Australia<span class="period">.</span></h2>
+    <div class="green-line" style="margin:20px auto;"></div>
+
+    <div class="contact-row">
+      <div class="contact-item">
+        <h4>PETER OKULOV</h4>
+        <p>peter@covert.com.au</p>
+      </div>
+      <div class="contact-item">
+        <h4>NATHAN RULE</h4>
+        <p>nathan@covert.com.au</p>
+      </div>
+    </div>
+
+    <div style="margin-top:56px;">
+      <p style="font-size:0.78rem;color:var(--grey-light);">covert.com.au</p>
+    </div>
+  </div>
+</div>
+
+</div><!-- end #deck-content -->
+
+<script>
+(function() {
+  var gate = document.getElementById('password-gate');
+  var deck = document.getElementById('deck-content');
+  var input = document.getElementById('gate-input');
+  var error = document.getElementById('gate-error');
+  var password = 'propsourcing2026';
+
+  // Check if already unlocked
+  if (sessionStorage.getItem('deck-unlocked-propsourcing') === 'true') {
+    gate.style.display = 'none';
+    deck.style.display = 'block';
+  }
+
+  function tryUnlock() {
+    if (input.value.toLowerCase().trim() === password) {
+      sessionStorage.setItem('deck-unlocked-propsourcing', 'true');
+      gate.style.opacity = '0';
+      gate.style.transition = 'opacity 0.5s ease';
+      setTimeout(function() {
+        gate.style.display = 'none';
+        deck.style.display = 'block';
+      }, 500);
+    } else {
+      error.classList.add('show');
+      input.value = '';
+      input.style.borderColor = '#e74c3c';
+      setTimeout(function() {
+        input.style.borderColor = 'rgba(255,255,255,0.15)';
+        error.classList.remove('show');
+      }, 2500);
+    }
+  }
+
+  input.addEventListener('keydown', function(e) { if (e.key === 'Enter') tryUnlock(); });
+  document.getElementById('gate-btn').addEventListener('click', tryUnlock);
+})();
+</script>
+
+</body>
+</html>
