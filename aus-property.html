@@ -7,44 +7,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* PASSWORD GATE */
-#password-gate {
-  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(135deg, var(--navy) 0%, #252540 100%);
-  display: flex; align-items: center; justify-content: center; flex-direction: column;
-  z-index: 9999;
-}
-#password-gate .gate-logo {
-  font-family: 'Apercu', 'Poppins', sans-serif;
-  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.3em;
-  color: var(--green); font-weight: 700; margin-bottom: 48px;
-}
-#password-gate .gate-box {
-  background: rgba(255,255,255,0.06); border-radius: var(--radius);
-  padding: 48px 56px; text-align: center; backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-#password-gate h2 {
-  color: white; font-size: 1.4rem; margin-bottom: 8px;
-  font-family: 'Apercu', 'Poppins', sans-serif;
-}
-#password-gate .gate-sub {
-  color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-bottom: 32px;
-}
-#password-gate input {
-  width: 100%; padding: 14px 20px; border: 2px solid rgba(255,255,255,0.15);
-  border-radius: 10px; background: rgba(255,255,255,0.06); color: white;
-  font-family: 'Poppins', sans-serif; font-size: 0.95rem; text-align: center;
-  outline: none; transition: border-color 0.3s;
-}
-#password-gate input::placeholder { color: rgba(255,255,255,0.3); }
-#password-gate input:focus { border-color: var(--green); }
-#password-gate .gate-error {
-  color: #e74c3c; font-size: 0.8rem; margin-top: 12px; opacity: 0; transition: opacity 0.3s;
-}
-#password-gate .gate-error.show { opacity: 1; }
-#deck-content { display: none; }
-
 /* === COVERT BASE CSS === */
 @font-face { font-family: 'Apercu'; src: url('https://www.covert.com.au/wp-content/themes/lf-covert/assets/fonts/Apercu-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; }
 @font-face { font-family: 'Apercu'; src: url('https://www.covert.com.au/wp-content/themes/lf-covert/assets/fonts/Apercu-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; }
@@ -422,18 +384,6 @@ table.green-header th { background: var(--green); }
 </style>
 </head>
 <body>
-
-<!-- PASSWORD GATE -->
-<div id="password-gate">
-  <div class="gate-logo">Covert Digital</div>
-  <div class="gate-box">
-    <h2>Protected Presentation</h2>
-    <p class="gate-sub">Enter the password to view this deck</p>
-    <input type="password" id="gate-input" placeholder="Enter password" autocomplete="off" autofocus>
-    <button id="gate-btn" style="width:100%;padding:14px;margin-top:16px;background:var(--green);color:white;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;transition:background 0.2s;" onmouseover="this.style.background='#017F4E'" onmouseout="this.style.background='#3E936C'">View Presentation</button>
-    <p class="gate-error" id="gate-error">Incorrect password. Please try again.</p>
-  </div>
-</div>
 
 <!-- DECK CONTENT -->
 <div id="deck-content">
@@ -1583,44 +1533,6 @@ table.green-header th { background: var(--green); }
 </div>
 
 </div><!-- end #deck-content -->
-
-<script>
-(function() {
-  var gate = document.getElementById('password-gate');
-  var deck = document.getElementById('deck-content');
-  var input = document.getElementById('gate-input');
-  var error = document.getElementById('gate-error');
-  var password = 'auspropertyprofessionals2026';
-
-  if (sessionStorage.getItem('deck-unlocked-ausproperty') === 'true') {
-    gate.style.display = 'none';
-    deck.style.display = 'block';
-  }
-
-  function tryUnlock() {
-    if (input.value.toLowerCase().trim() === password) {
-      sessionStorage.setItem('deck-unlocked-ausproperty', 'true');
-      gate.style.opacity = '0';
-      gate.style.transition = 'opacity 0.5s ease';
-      setTimeout(function() {
-        gate.style.display = 'none';
-        deck.style.display = 'block';
-      }, 500);
-    } else {
-      error.classList.add('show');
-      input.value = '';
-      input.style.borderColor = '#e74c3c';
-      setTimeout(function() {
-        input.style.borderColor = 'rgba(255,255,255,0.15)';
-        error.classList.remove('show');
-      }, 2500);
-    }
-  }
-
-  input.addEventListener('keydown', function(e) { if (e.key === 'Enter') tryUnlock(); });
-  document.getElementById('gate-btn').addEventListener('click', tryUnlock);
-})();
-</script>
 
 </body>
 </html>
