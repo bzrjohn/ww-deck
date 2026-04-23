@@ -324,4 +324,49 @@ table.green-header th { background: var(--green); }
   table { page-break-inside: avoid; }
   .card-grid, .card-grid-2, .card-grid-4 { page-break-inside: avoid; }
   .insight { page-break-inside: avoid; }
+  .price-card { box-shadow: none !important; page-break-inside: avoid; }
+}
+
+/* ============================================================
+   EXTENSIONS — utilities & pricing cards
+   Additive classes used by proposal decks (schleepi, etc.)
+   ============================================================ */
+
+/* Utility colours */
+.navy { color: var(--navy); }
+.stat-val-warn { color: #C07A2A; }
+
+/* Warning-tone insight box */
+.insight-warn { background: #FBF2E7; border-left-color: #C07A2A; }
+
+/* Cross / arrow lists */
+.x-list { list-style: none; }
+.x-list li { padding: 8px 0 8px 32px; position: relative; font-size: 0.9rem; color: var(--grey); line-height: 1.6; }
+.x-list li::before { content: '\2715'; position: absolute; left: 0; color: #C07A2A; font-weight: 700; font-size: 1.05rem; }
+
+/* Pricing cards */
+.pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; align-items: stretch; }
+.price-card { background: white; border-radius: var(--radius); padding: 44px 38px; border: 1.5px solid rgba(0,0,0,0.08); box-shadow: var(--shadow-sm); position: relative; display: flex; flex-direction: column; }
+.price-card-featured { border-color: var(--green); border-width: 2px; box-shadow: 0 8px 32px rgba(62,147,108,0.15); }
+.price-card-featured::before { content: 'RECOMMENDED TO START'; position: absolute; top: -13px; left: 38px; background: var(--green); color: white; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.15em; padding: 6px 14px; border-radius: 20px; }
+.price-tier { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--green); margin-bottom: 12px; }
+.price-val { font-family: 'Apercu', 'Poppins', sans-serif; font-size: 3.4rem; font-weight: 700; color: var(--navy); line-height: 1; letter-spacing: -0.025em; }
+.price-val .per { font-size: 0.95rem; font-weight: 400; color: var(--grey-light); margin-left: 6px; letter-spacing: 0; }
+.price-tagline { font-size: 0.95rem; color: var(--grey); margin: 14px 0 26px; line-height: 1.6; }
+.price-feat { list-style: none; margin-top: 8px; flex-grow: 1; }
+.price-feat li { padding: 10px 0 10px 30px; position: relative; font-size: 0.88rem; color: var(--grey); line-height: 1.55; border-bottom: 1px solid #f0f0f2; }
+.price-feat li:last-child { border-bottom: none; }
+.price-feat li::before { content: '\2713'; position: absolute; left: 0; top: 10px; color: var(--green); font-weight: 700; font-size: 1rem; }
+
+@media (max-width: 900px) {
+  .pricing { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 768px) {
+  .pricing { grid-template-columns: 1fr !important; gap: 16px; margin-top: 24px; }
+  .price-card { padding: 32px 24px; }
+  .price-val { font-size: 2.4rem; }
+  .x-list li { font-size: 0.84rem; padding: 6px 0 6px 28px; }
+}
+@media (max-width: 480px) {
+  .price-val { font-size: 2rem; }
 }
